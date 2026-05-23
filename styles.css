@@ -397,9 +397,20 @@ p {
   border-bottom: 1px solid var(--line);
 }
 
-.workflow-map article:nth-child(2),
-.workflow-map article:nth-child(4) {
-  background: var(--wash);
+.ai-workflow-section .workflow-map article {
+  border-color: rgba(53, 119, 232, 0.16);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(242, 247, 255, 0.92)),
+    #fff;
+  box-shadow: 0 14px 34px rgba(53, 119, 232, 0.08);
+}
+
+.ai-workflow-section .workflow-map span {
+  color: #2f73df;
+}
+
+.ai-workflow-section .workflow-map h3 {
+  color: var(--ink);
 }
 
 .project-list {
