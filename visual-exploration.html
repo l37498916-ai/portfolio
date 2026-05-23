@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>视觉探索</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="detail-page">
+    <canvas class="ambient-canvas" aria-hidden="true"></canvas>
+    <main>
+      <section class="detail-hero">
+        <div>
+          <a class="back-link" href="./index.html#visuals">返回视觉探索</a>
+          <p class="eyebrow">04 · Visual Exploration</p>
+          <h1>视觉探索</h1>
+          <p class="lead">
+            这里展示海报、推文视觉、小册子排版、动态标题与氛围视觉，用来补充我的视觉判断、
+            风格筛选和动态叙事能力。
+          </p>
+        </div>
+        <div class="detail-cover asset-frame">
+          <img src="./assets/visual-01.jpg" alt="视觉探索封面" />
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div class="section-heading">
+          <p class="eyebrow">Motion preview</p>
+          <h2>动态视觉演示</h2>
+          <p>将 `visual-demo.mp4` 放入 assets 文件夹后，这里会直接播放动态标题或视觉实验视频。</p>
+        </div>
+        <div class="video-shell">
+          <video class="project-video" controls playsinline poster="./assets/visual-01.jpg">
+            <source src="./assets/visual-demo.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div class="detail-grid">
+          <article>
+            <h3>探索方向</h3>
+            <p>Dynamic Visual Narrative / Visual Storytelling / Atmosphere-driven Design。</p>
+          </article>
+          <article>
+            <h3>筛选标准</h3>
+            <p>叙事性、情绪强度、动态潜力，以及是否能进入交互体验。</p>
+          </article>
+          <article>
+            <h3>能力证明</h3>
+            <p>证明我能从生成式视觉中筛选、组织并转化出统一的视觉语言。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div class="section-heading">
+          <p class="eyebrow">Gallery</p>
+          <h2>视觉作品</h2>
+        </div>
+        <div class="detail-gallery">
+          <figure class="asset-frame"><img src="./assets/visual-01.jpg" alt="视觉探索 01" /></figure>
+          <figure class="asset-frame"><img src="./assets/visual-02.jpg" alt="视觉探索 02" /></figure>
+          <figure class="asset-frame"><img src="./assets/visual-03.jpg" alt="视觉探索 03" /></figure>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
