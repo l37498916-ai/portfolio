@@ -69,7 +69,8 @@ if (canvas) {
     canvas.height = Math.floor(height * pixelRatio);
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
-    particles = Array.from({ length: Math.max(70, Math.floor(width / 13)) }, (_, index) => ({
+    const particleCount = width < 640 ? Math.max(42, Math.floor(width / 18)) : Math.max(70, Math.floor(width / 13));
+    particles = Array.from({ length: particleCount }, (_, index) => ({
       x: Math.random() * width,
       y: Math.random() * height,
       radius: 0.8 + Math.random() * 2.4,
@@ -108,8 +109,9 @@ if (canvas) {
         const dx = particle.x - pointerX;
         const dy = particle.y - pointerY;
         const distance = Math.hypot(dx, dy);
-        if (distance < 260 && distance > 0) {
-          const force = (1 - distance / 260) * 2.6;
+        const pointerRange = width < 640 ? 180 : 260;
+        if (distance < pointerRange && distance > 0) {
+          const force = (1 - distance / pointerRange) * 2.6;
           particle.x += (dx / distance) * force;
           particle.y += (dy / distance) * force;
         }
@@ -135,8 +137,9 @@ if (canvas) {
         const a = particles[i];
         const b = particles[j];
         const distance = Math.hypot(a.x - b.x, a.y - b.y);
-        if (distance < 116) {
-          context.globalAlpha = (1 - distance / 116) * 0.8;
+        const linkRange = width < 640 ? 92 : 116;
+        if (distance < linkRange) {
+          context.globalAlpha = (1 - distance / linkRange) * 0.8;
           context.beginPath();
           context.moveTo(a.x, a.y);
           context.lineTo(b.x, b.y);
