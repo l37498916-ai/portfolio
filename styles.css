@@ -462,18 +462,27 @@ p {
 .chain-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
+  gap: 0;
+  margin-top: 14px;
 }
 
 .chain-tags span {
-  border: 1px solid rgba(53, 119, 232, 0.14);
-  border-radius: 6px;
-  background: rgba(248, 251, 255, 0.82);
-  color: #53657d;
+  color: #6c7f99;
   font-size: 13px;
+  font-weight: 800;
+  padding: 0;
+}
+
+.chain-tags span::after {
+  content: "/";
+  margin: 0 9px;
+  color: rgba(108, 127, 153, 0.42);
   font-weight: 700;
-  padding: 7px 10px;
+}
+
+.chain-tags span:last-child::after {
+  content: "";
+  margin: 0;
 }
 
 .capability-grid,
@@ -951,13 +960,11 @@ p {
 }
 
 .case-hero-tags,
-.chain-tags,
 .case-hero-tags span {
   letter-spacing: 0;
 }
 
 .case-hero-tags,
-.chain-tags,
 .case-meta-grid,
 .case-focus-grid,
 .signal-flow,
@@ -974,8 +981,7 @@ p {
   gap: 10px;
 }
 
-.case-hero-tags span,
-.chain-tags span {
+.case-hero-tags span {
   border: 1px solid rgba(53, 119, 232, 0.15);
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.76);
