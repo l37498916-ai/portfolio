@@ -271,7 +271,6 @@ p {
 .reveal-section .section-heading .eyebrow,
 .reveal-section .section-heading h2,
 .reveal-section .section-heading p,
-.reveal-section .about-snapshot,
 .reveal-section .ability-chain-card,
 .reveal-section .capability-grid article,
 .reveal-section .timeline article,
@@ -288,7 +287,6 @@ p {
 .reveal-section.is-visible .section-heading .eyebrow,
 .reveal-section.is-visible .section-heading h2,
 .reveal-section.is-visible .section-heading p,
-.reveal-section.is-visible .about-snapshot,
 .reveal-section.is-visible .ability-chain-card,
 .reveal-section.is-visible .capability-grid article,
 .reveal-section.is-visible .timeline article,
@@ -308,10 +306,6 @@ p {
 
 .reveal-section.is-visible .section-heading p:nth-of-type(2) {
   transition-delay: 260ms;
-}
-
-.reveal-section.is-visible .about-snapshot {
-  transition-delay: 300ms;
 }
 
 .reveal-section.is-visible .ability-chain-card:nth-child(1) {
@@ -381,44 +375,6 @@ p {
 
 .capability-section {
   border-top: 1px solid var(--line);
-}
-
-.about-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 40px;
-  align-items: end;
-  margin-bottom: 34px;
-}
-
-.about-layout .section-heading {
-  margin-bottom: 0;
-}
-
-.about-snapshot {
-  display: grid;
-  gap: 14px;
-  border-left: 2px solid rgba(53, 119, 232, 0.2);
-  padding: 8px 0 8px 20px;
-}
-
-.about-snapshot div {
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 14px;
-  align-items: center;
-}
-
-.about-snapshot span {
-  color: #7890ad;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.about-snapshot strong {
-  color: var(--ink);
-  font-size: 16px;
-  line-height: 1.45;
 }
 
 .ability-chain {
@@ -1166,7 +1122,6 @@ p {
 
 @media (max-width: 920px) {
   .hero,
-  .about-layout,
   .project-card,
   .project-card.featured,
   .section-heading.split,
@@ -1242,14 +1197,6 @@ p {
 
   .project-card {
     padding: 12px;
-  }
-
-  .about-snapshot {
-    padding: 18px;
-  }
-
-  .about-snapshot div {
-    grid-template-columns: 44px 1fr;
   }
 
   .ability-chain::before {
