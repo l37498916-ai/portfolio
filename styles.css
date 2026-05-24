@@ -1084,9 +1084,9 @@ p {
 
 .overview-type-layout p {
   color: var(--ink);
-  font-size: clamp(24px, 4.5vw, 63px);
+  font-size: clamp(48px, 9vw, 126px);
   font-weight: 950;
-  line-height: 1.05;
+  line-height: 0.9;
   letter-spacing: 0;
 }
 
@@ -1101,8 +1101,6 @@ p {
 .overview-type-layout em {
   color: var(--blue);
   font-style: normal;
-  font-size: 2em;
-  line-height: 0.9;
   text-decoration: underline;
   text-decoration-color: rgba(53, 119, 232, 0.34);
   text-decoration-thickness: 0.08em;
