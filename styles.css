@@ -367,8 +367,8 @@ p {
 
 .about-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
-  gap: 42px;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 40px;
   align-items: end;
   margin-bottom: 34px;
 }
@@ -379,14 +379,9 @@ p {
 
 .about-snapshot {
   display: grid;
-  gap: 12px;
-  border: 1px solid rgba(53, 119, 232, 0.18);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(237, 246, 255, 0.9)),
-    #fff;
-  box-shadow: 0 18px 48px rgba(53, 119, 232, 0.08);
-  padding: 22px;
+  gap: 14px;
+  border-left: 2px solid rgba(53, 119, 232, 0.2);
+  padding: 8px 0 8px 20px;
 }
 
 .about-snapshot div {
@@ -394,24 +389,17 @@ p {
   grid-template-columns: 52px 1fr;
   gap: 14px;
   align-items: center;
-  border-bottom: 1px solid rgba(53, 119, 232, 0.1);
-  padding-bottom: 12px;
-}
-
-.about-snapshot div:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
 }
 
 .about-snapshot span {
-  color: var(--blue);
+  color: #7890ad;
   font-size: 13px;
   font-weight: 800;
 }
 
 .about-snapshot strong {
   color: var(--ink);
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.45;
 }
 
@@ -455,135 +443,29 @@ p {
 .capability-card {
   position: relative;
   overflow: hidden;
-  min-height: 250px;
-}
-
-.capability-card::before {
-  content: "";
-  position: absolute;
-  inset: auto 18px 18px auto;
-  width: 68px;
-  height: 42px;
-  border-right: 1px solid rgba(53, 119, 232, 0.16);
-  border-bottom: 1px solid rgba(53, 119, 232, 0.16);
-  opacity: 0.7;
+  min-height: 226px;
 }
 
 .capability-card-featured {
-  border-color: rgba(53, 119, 232, 0.18);
+  border-color: rgba(53, 119, 232, 0.14);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(239, 246, 255, 0.96)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 250, 255, 0.96)),
     #fff;
 }
 
 .capability-card-head {
   display: flex;
+  justify-content: space-between;
   gap: 14px;
   align-items: center;
 }
 
 .capability-card-head small {
-  border: 1px solid rgba(53, 119, 232, 0.16);
-  border-radius: 999px;
-  color: #58708f;
+  color: #8192a8;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0;
-  padding: 6px 9px;
   text-transform: uppercase;
-}
-
-.capability-icon {
-  position: relative;
-  flex: 0 0 auto;
-  width: 42px;
-  height: 42px;
-  margin-left: auto;
-  border: 1px solid rgba(53, 119, 232, 0.18);
-  border-radius: 8px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(235, 244, 255, 0.82));
-}
-
-.capability-icon::before,
-.capability-icon::after {
-  content: "";
-  position: absolute;
-  display: block;
-}
-
-.icon-workflow::before {
-  left: 10px;
-  top: 20px;
-  width: 22px;
-  height: 2px;
-  background: var(--blue);
-  box-shadow: 0 -9px 0 rgba(53, 119, 232, 0.44), 0 9px 0 rgba(53, 119, 232, 0.44);
-}
-
-.icon-workflow::after {
-  left: 9px;
-  top: 8px;
-  width: 6px;
-  height: 6px;
-  border-radius: 2px;
-  background: var(--blue);
-  box-shadow: 18px 9px 0 var(--blue), 0 18px 0 var(--blue);
-}
-
-.icon-narrative::before {
-  left: 13px;
-  top: 10px;
-  width: 17px;
-  height: 22px;
-  border: 2px solid var(--blue);
-  border-radius: 3px;
-  transform: rotate(-6deg);
-}
-
-.icon-narrative::after {
-  left: 17px;
-  top: 16px;
-  width: 12px;
-  height: 2px;
-  background: rgba(53, 119, 232, 0.7);
-  box-shadow: 0 6px 0 rgba(53, 119, 232, 0.42);
-  transform: rotate(-6deg);
-}
-
-.icon-interaction::before {
-  left: 9px;
-  top: 19px;
-  width: 24px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0 15%, var(--blue) 15% 85%, transparent 85%);
-}
-
-.icon-interaction::after {
-  left: 8px;
-  top: 9px;
-  width: 8px;
-  height: 8px;
-  border: 2px solid var(--blue);
-  border-radius: 50%;
-  box-shadow: 18px 12px 0 -1px #fff, 18px 12px 0 1px var(--blue), 8px 23px 0 -1px #fff, 8px 23px 0 1px var(--blue);
-}
-
-.icon-prototype::before {
-  left: 10px;
-  top: 10px;
-  width: 22px;
-  height: 18px;
-  border: 2px solid var(--blue);
-  border-radius: 3px;
-}
-
-.icon-prototype::after {
-  left: 15px;
-  top: 31px;
-  width: 12px;
-  height: 2px;
-  background: var(--blue);
-  box-shadow: 4px -12px 0 rgba(53, 119, 232, 0.4);
 }
 
 .capability-card p {
@@ -604,34 +486,17 @@ p {
 .workflow-pills span,
 .capability-tags span {
   border: 1px solid rgba(53, 119, 232, 0.14);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.76);
-  color: #3d5878;
+  border-radius: 6px;
+  background: rgba(248, 251, 255, 0.84);
+  color: #53657d;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
   padding: 7px 10px;
 }
 
 .workflow-pills span {
-  color: var(--blue);
-}
-
-.capability-meter {
-  position: relative;
-  z-index: 1;
-  height: 7px;
-  border-radius: 999px;
-  background: #e9eff7;
-  margin: 20px 0 4px;
-  overflow: hidden;
-}
-
-.capability-meter i {
-  display: block;
-  width: var(--meter);
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, #7fb2ff, var(--blue));
+  border-color: rgba(53, 119, 232, 0.18);
+  color: #2f73df;
 }
 
 .ai-workflow-section {
