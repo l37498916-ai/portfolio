@@ -462,11 +462,10 @@ p {
   content: "";
   position: absolute;
   inset: auto 18px 18px auto;
-  width: 76px;
-  height: 76px;
-  border: 1px solid rgba(53, 119, 232, 0.16);
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(53, 119, 232, 0.12), transparent 62%);
+  width: 68px;
+  height: 42px;
+  border-right: 1px solid rgba(53, 119, 232, 0.16);
+  border-bottom: 1px solid rgba(53, 119, 232, 0.16);
   opacity: 0.7;
 }
 
@@ -479,9 +478,8 @@ p {
 
 .capability-card-head {
   display: flex;
-  justify-content: space-between;
   gap: 14px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .capability-card-head small {
@@ -493,6 +491,99 @@ p {
   letter-spacing: 0;
   padding: 6px 9px;
   text-transform: uppercase;
+}
+
+.capability-icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  margin-left: auto;
+  border: 1px solid rgba(53, 119, 232, 0.18);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(235, 244, 255, 0.82));
+}
+
+.capability-icon::before,
+.capability-icon::after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.icon-workflow::before {
+  left: 10px;
+  top: 20px;
+  width: 22px;
+  height: 2px;
+  background: var(--blue);
+  box-shadow: 0 -9px 0 rgba(53, 119, 232, 0.44), 0 9px 0 rgba(53, 119, 232, 0.44);
+}
+
+.icon-workflow::after {
+  left: 9px;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--blue);
+  box-shadow: 18px 9px 0 var(--blue), 0 18px 0 var(--blue);
+}
+
+.icon-narrative::before {
+  left: 13px;
+  top: 10px;
+  width: 17px;
+  height: 22px;
+  border: 2px solid var(--blue);
+  border-radius: 3px;
+  transform: rotate(-6deg);
+}
+
+.icon-narrative::after {
+  left: 17px;
+  top: 16px;
+  width: 12px;
+  height: 2px;
+  background: rgba(53, 119, 232, 0.7);
+  box-shadow: 0 6px 0 rgba(53, 119, 232, 0.42);
+  transform: rotate(-6deg);
+}
+
+.icon-interaction::before {
+  left: 9px;
+  top: 19px;
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0 15%, var(--blue) 15% 85%, transparent 85%);
+}
+
+.icon-interaction::after {
+  left: 8px;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  box-shadow: 18px 12px 0 -1px #fff, 18px 12px 0 1px var(--blue), 8px 23px 0 -1px #fff, 8px 23px 0 1px var(--blue);
+}
+
+.icon-prototype::before {
+  left: 10px;
+  top: 10px;
+  width: 22px;
+  height: 18px;
+  border: 2px solid var(--blue);
+  border-radius: 3px;
+}
+
+.icon-prototype::after {
+  left: 15px;
+  top: 31px;
+  width: 12px;
+  height: 2px;
+  background: var(--blue);
+  box-shadow: 4px -12px 0 rgba(53, 119, 232, 0.4);
 }
 
 .capability-card p {
