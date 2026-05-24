@@ -1188,6 +1188,130 @@ p {
   font-size: 18px;
 }
 
+.tech-evidence-board {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: repeat(8, 72px);
+  gap: 18px;
+  margin-top: 42px;
+  border: 1px solid rgba(226, 232, 241, 0.72);
+  border-radius: 8px;
+  background:
+    radial-gradient(ellipse at 50% 22%, rgba(53, 119, 232, 0.06), transparent 42%),
+    rgba(255, 255, 255, 0.42);
+  padding: 44px;
+}
+
+.tech-media-card {
+  position: relative;
+  overflow: hidden;
+  grid-column: span 4;
+  grid-row: span 3;
+  border: 1px solid rgba(226, 232, 241, 0.92);
+  border-radius: 8px;
+  background: #e9edf3;
+  box-shadow: 0 14px 38px rgba(18, 21, 28, 0.08);
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  transform: translateY(0) scale(1);
+  animation: techCardFloat 6.8s ease-in-out infinite;
+  transition:
+    border-color 620ms ease,
+    box-shadow 620ms ease,
+    filter 620ms ease,
+    transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-media-card:nth-child(2) {
+  animation-delay: -1.6s;
+}
+
+.tech-media-card:nth-child(3) {
+  animation-delay: -3.2s;
+}
+
+.tech-media-card-large {
+  grid-column: 3 / 10;
+  grid-row: 1 / 5;
+}
+
+.tech-media-card:nth-child(2) {
+  grid-column: 1 / 5;
+  grid-row: 5 / 8;
+}
+
+.tech-media-card-wide {
+  grid-column: 6 / 12;
+  grid-row: 5 / 9;
+}
+
+.tech-media-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1) saturate(0.08) contrast(0.88);
+  object-fit: cover;
+  opacity: 0.82;
+  transition:
+    filter 620ms ease,
+    opacity 620ms ease,
+    transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-media-card span {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 1;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #53657d;
+  font-size: 13px;
+  font-weight: 900;
+  padding: 7px 10px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.tech-media-card:hover,
+.tech-media-card:focus-visible,
+.tech-media-card.is-selected {
+  z-index: 2;
+  border-color: rgba(53, 119, 232, 0.34);
+  box-shadow: 0 26px 72px rgba(18, 21, 28, 0.16);
+  transform: translateY(-8px) scale(1.035);
+  animation-play-state: paused;
+  outline: none;
+}
+
+.tech-media-card:hover img,
+.tech-media-card:focus-visible img,
+.tech-media-card.is-selected img {
+  filter: grayscale(0) saturate(1.03) contrast(1.02);
+  opacity: 1;
+  transform: scale(1.025);
+}
+
+.tech-media-card:hover span,
+.tech-media-card:focus-visible span,
+.tech-media-card.is-selected span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes techCardFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-6px) scale(1.005);
+  }
+}
+
 .case-gallery .asset-frame {
   min-height: 320px;
 }
@@ -1336,6 +1460,7 @@ p {
 .detail-reveal .strategy-image,
 .detail-reveal .strategy-panels article,
 .detail-reveal .system-column,
+.detail-reveal .tech-media-card,
 .detail-reveal .reflection-grid article {
   opacity: 0;
   transform: translateY(24px);
@@ -1364,6 +1489,7 @@ p {
 .detail-reveal.is-visible .strategy-image,
 .detail-reveal.is-visible .strategy-panels article,
 .detail-reveal.is-visible .system-column,
+.detail-reveal.is-visible .tech-media-card,
 .detail-reveal.is-visible .reflection-grid article {
   opacity: 1;
   transform: translateY(0);
@@ -1395,6 +1521,7 @@ p {
 .detail-reveal.is-visible .case-process-list article:nth-child(1),
 .detail-reveal.is-visible .strategy-image,
 .detail-reveal.is-visible .system-column:nth-child(1),
+.detail-reveal.is-visible .tech-media-card:nth-child(1),
 .detail-reveal.is-visible .reflection-grid article:nth-child(1) {
   transition-delay: 360ms;
 }
@@ -1408,6 +1535,7 @@ p {
 .detail-reveal.is-visible .case-process-list article:nth-child(2),
 .detail-reveal.is-visible .strategy-panels article:nth-child(1),
 .detail-reveal.is-visible .system-column:nth-child(2),
+.detail-reveal.is-visible .tech-media-card:nth-child(2),
 .detail-reveal.is-visible .reflection-grid article:nth-child(2) {
   transition-delay: 460ms;
 }
@@ -1420,7 +1548,8 @@ p {
 .detail-reveal.is-visible .signal-flow article:nth-child(3),
 .detail-reveal.is-visible .case-process-list article:nth-child(3),
 .detail-reveal.is-visible .strategy-panels article:nth-child(2),
-.detail-reveal.is-visible .system-column:nth-child(3) {
+.detail-reveal.is-visible .system-column:nth-child(3),
+.detail-reveal.is-visible .tech-media-card:nth-child(3) {
   transition-delay: 560ms;
 }
 
@@ -1510,6 +1639,7 @@ p {
   .case-focus-grid,
   .signal-flow,
   .system-map,
+  .tech-evidence-board,
   .brochure-pages,
   .card-showcase-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1530,6 +1660,25 @@ p {
   .signal-flow::before,
   .system-column:not(:last-child)::after {
     display: none;
+  }
+
+  .tech-evidence-board {
+    grid-template-rows: none;
+    padding: 26px;
+  }
+
+  .tech-media-card,
+  .tech-media-card-large,
+  .tech-media-card-wide,
+  .tech-media-card:nth-child(2) {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 260px;
+  }
+
+  .tech-media-card-large {
+    grid-column: 1 / -1;
+    min-height: 360px;
   }
 }
 
@@ -1577,6 +1726,7 @@ p {
   .case-focus-grid,
   .signal-flow,
   .system-map,
+  .tech-evidence-board,
   .brochure-pages,
   .card-showcase-grid {
     grid-template-columns: 1fr;
@@ -1628,8 +1778,16 @@ p {
 
   .case-hero-media,
   .strategy-image,
-  .case-gallery .asset-frame {
+  .case-gallery .asset-frame,
+  .tech-media-card,
+  .tech-media-card-large,
+  .tech-media-card-wide {
     min-height: 280px;
+  }
+
+  .tech-evidence-board {
+    gap: 14px;
+    padding: 16px;
   }
 
   .case-overview-grid,
@@ -1707,8 +1865,10 @@ p {
   .detail-reveal .strategy-image,
   .detail-reveal .strategy-panels article,
   .detail-reveal .system-column,
+  .detail-reveal .tech-media-card,
   .detail-reveal .reflection-grid article {
     transition: none;
+    animation: none;
   }
 
   .project-card:hover,
@@ -1742,6 +1902,7 @@ p {
   .detail-reveal .strategy-image,
   .detail-reveal .strategy-panels article,
   .detail-reveal .system-column,
+  .detail-reveal .tech-media-card,
   .detail-reveal .reflection-grid article {
     opacity: 1;
     transform: none;

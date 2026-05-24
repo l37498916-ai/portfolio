@@ -323,3 +323,17 @@ document.querySelectorAll(".ambient-canvas").forEach((ambientCanvas) => {
 
   window.addEventListener("beforeunload", () => cancelAnimationFrame(frame));
 });
+
+document.querySelectorAll(".tech-evidence-board").forEach((board) => {
+  const cards = Array.from(board.querySelectorAll(".tech-media-card"));
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      cards.forEach((item) => {
+        const isSelected = item === card;
+        item.classList.toggle("is-selected", isSelected);
+        item.setAttribute("aria-pressed", String(isSelected));
+      });
+    });
+  });
+});

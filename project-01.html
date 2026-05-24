@@ -161,37 +161,11 @@
         </div>
       </section>
 
-      <section class="case-section case-strategy detail-reveal" aria-labelledby="strategy-title">
-        <div class="case-section-heading">
-          <p class="eyebrow">Interaction & visual strategy</p>
-          <h2 id="strategy-title">交互与视觉策略</h2>
-        </div>
-        <div class="strategy-grid">
-          <figure class="asset-frame strategy-image">
-            <img loading="lazy" decoding="async" src="./assets/project-01-01.jpg" alt="装置现场结构图" />
-          </figure>
-          <div class="strategy-panels">
-            <article>
-              <h3>让反馈可见</h3>
-              <p>用电机驱动的机械运动把不可见的身体状态转译成现场可见的反馈。</p>
-            </article>
-            <article>
-              <h3>让系统可调试</h3>
-              <p>将复杂硬件拆成可单独测试的模块，降低现场搭建和故障排查成本。</p>
-            </article>
-            <article>
-              <h3>让 AI 参与过程</h3>
-              <p>AI 不只是生成内容，而是参与资料研究、代码排错和方案组织的创作工具。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section class="case-section case-tech detail-reveal" aria-labelledby="tech-title">
         <div class="case-section-heading">
           <p class="eyebrow">Technical system</p>
           <h2 id="tech-title">技术落地</h2>
-          <p>用系统结构图替代长段说明，展示装置从输入到输出的真实运行关系。</p>
+          <p>把系统结构与过程证据放在同一屏：先理解运行关系，再查看现场搭建与模块调试。</p>
         </div>
         <div class="system-map" aria-label="装置技术结构">
           <div class="system-column">
@@ -215,18 +189,19 @@
             <strong>Module Expansion</strong>
           </div>
         </div>
-      </section>
-
-      <section class="case-section detail-reveal" aria-labelledby="material-title">
-        <div class="case-section-heading">
-          <p class="eyebrow">Process materials</p>
-          <h2 id="material-title">过程素材</h2>
-          <p>现场照片、模块测试和运行截图作为证据，说明项目不是概念展示，而是完成过落地验证的系统。</p>
-        </div>
-        <div class="detail-gallery case-gallery">
-          <figure class="asset-frame"><img loading="lazy" decoding="async" src="./assets/project-01-01.jpg" alt="装置过程图 01" /></figure>
-          <figure class="asset-frame"><img loading="lazy" decoding="async" src="./assets/project-01-02.jpg" alt="装置过程图 02" /></figure>
-          <figure class="asset-frame"><img loading="lazy" decoding="async" src="./assets/project-01-03.jpg" alt="装置过程图 03" /></figure>
+        <div class="tech-evidence-board" aria-label="技术落地过程素材">
+          <button class="tech-media-card tech-media-card-large" type="button" aria-pressed="false">
+            <img loading="lazy" decoding="async" src="./assets/project-01-01.jpg" alt="装置机械结构现场图" />
+            <span>机械结构</span>
+          </button>
+          <button class="tech-media-card" type="button" aria-pressed="false">
+            <img loading="lazy" decoding="async" src="./assets/project-01-02.jpg" alt="Arduino 模块接线与调试过程" />
+            <span>模块调试</span>
+          </button>
+          <button class="tech-media-card tech-media-card-wide" type="button" aria-pressed="false">
+            <img loading="lazy" decoding="async" src="./assets/project-01-03.jpg" alt="现场运行与装置搭建过程" />
+            <span>现场验证</span>
+          </button>
         </div>
       </section>
 
