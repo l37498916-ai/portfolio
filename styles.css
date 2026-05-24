@@ -1384,9 +1384,9 @@ p {
 }
 
 .tech-media-card-wide {
-  top: 62%;
-  right: 11%;
-  width: 36%;
+  top: 61%;
+  right: 7%;
+  width: 42%;
 }
 
 .tech-media-card-process {
@@ -1872,8 +1872,8 @@ p {
 
   .tech-media-card-wide {
     top: 63%;
-    right: 3%;
-    width: 43%;
+    right: 1%;
+    width: 48%;
   }
 }
 
@@ -2009,7 +2009,7 @@ p {
   .tech-media-card-wide {
     top: 63%;
     right: 0;
-    width: 48%;
+    width: 54%;
   }
 
   .case-overview-grid,
