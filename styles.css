@@ -1019,24 +1019,35 @@ p {
 
 .overview-poster {
   position: relative;
+  overflow: hidden;
   min-height: 560px;
-  border-top: 5px solid var(--ink);
-  border-bottom: 5px solid var(--ink);
-  background: #fff;
-  padding: clamp(28px, 5vw, 64px) 0 clamp(24px, 4vw, 52px);
+  border: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(225, 234, 247, 0.72)),
+    #eef4ff;
+  padding: clamp(28px, 5vw, 64px);
 }
 
 .overview-poster::before {
-  content: "FROM UNKNOWN HARDWARE / TO RUNNABLE PROTOTYPE";
+  content: "";
   position: absolute;
-  right: 0;
-  top: clamp(76px, 10vw, 126px);
-  color: var(--ink);
-  font-size: 12px;
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: 0;
-  writing-mode: vertical-rl;
+  right: clamp(22px, 5vw, 68px);
+  top: clamp(18px, 4vw, 48px);
+  width: clamp(92px, 14vw, 180px);
+  height: clamp(180px, 22vw, 310px);
+  background: rgba(53, 119, 232, 0.08);
+  clip-path: polygon(100% 0, 100% 72%, 34% 88%, 34% 100%, 0 100%, 0 68%, 66% 50%, 66% 0);
+}
+
+.overview-poster::after {
+  content: "";
+  position: absolute;
+  left: clamp(18px, 5vw, 64px);
+  bottom: clamp(22px, 5vw, 58px);
+  width: clamp(120px, 20vw, 260px);
+  height: clamp(120px, 20vw, 260px);
+  border: 28px solid rgba(53, 119, 232, 0.08);
+  border-radius: 50%;
 }
 
 .overview-kicker {
@@ -1044,11 +1055,9 @@ p {
   z-index: 1;
   display: flex;
   justify-content: space-between;
-  border-bottom: 3px solid var(--ink);
   color: var(--ink);
   font-size: 14px;
   font-weight: 900;
-  padding-bottom: 14px;
   text-transform: uppercase;
 }
 
@@ -1116,20 +1125,21 @@ p {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   margin: clamp(34px, 6vw, 64px) 0 0;
-  border-top: 3px solid var(--ink);
-  border-bottom: 3px solid var(--ink);
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(8px);
 }
 
 .overview-strip div {
+  border: 1px solid rgba(132, 151, 178, 0.24);
   padding: 18px 18px 20px;
 }
 
 .overview-strip div:not(:last-child) {
-  border-right: 2px solid var(--ink);
+  border-right: 0;
 }
 
 .overview-strip dt {
-  color: var(--ink);
+  color: #7d91ad;
   font-size: 13px;
   font-weight: 900;
 }
@@ -1922,7 +1932,7 @@ p {
   }
 
   .overview-strip div:nth-child(-n + 2) {
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid rgba(132, 151, 178, 0.24);
   }
 
   .capability-grid,
@@ -2103,10 +2113,11 @@ p {
 
   .overview-poster,
   .method-board {
-    padding: 28px 0;
+    padding: 28px 22px;
   }
 
-  .overview-poster::before {
+  .overview-poster::before,
+  .overview-poster::after {
     display: none;
   }
 
@@ -2125,7 +2136,7 @@ p {
   }
 
   .overview-strip div:not(:last-child) {
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid rgba(132, 151, 178, 0.24);
   }
 
   .method-flow article:nth-child(even) {
