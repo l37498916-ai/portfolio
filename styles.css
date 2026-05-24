@@ -1102,6 +1102,106 @@ p {
   font-size: 24px;
 }
 
+.case-method {
+  padding-top: 108px;
+  padding-bottom: 108px;
+}
+
+.method-board {
+  overflow: hidden;
+  border: 1px solid rgba(210, 222, 240, 0.78);
+  border-radius: 8px;
+  background:
+    radial-gradient(ellipse at 22% 18%, rgba(53, 119, 232, 0.12), transparent 36%),
+    linear-gradient(145deg, #eef4ff 0%, #f8fafc 42%, #dfe8f6 100%);
+  box-shadow: 0 24px 70px rgba(18, 21, 28, 0.08);
+  padding: clamp(28px, 5vw, 58px);
+}
+
+.method-before-after {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.method-before-after div {
+  min-height: 180px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.68);
+  padding: 28px;
+}
+
+.method-before-after span,
+.method-flow span {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.method-before-after strong {
+  display: block;
+  margin-top: 16px;
+  color: var(--ink);
+  font-size: clamp(28px, 3.4vw, 48px);
+  line-height: 1.08;
+}
+
+.method-before-after em {
+  display: grid;
+  place-items: center;
+  min-width: 132px;
+  min-height: 132px;
+  border: 1px solid rgba(53, 119, 232, 0.2);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--blue);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.method-flow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.method-flow::before {
+  content: "";
+  position: absolute;
+  left: 9%;
+  right: 9%;
+  top: 29px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(53, 119, 232, 0.45), transparent);
+}
+
+.method-flow article {
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(226, 232, 241, 0.78);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 22px;
+}
+
+.method-flow h3 {
+  margin: 18px 0 8px;
+  font-size: 22px;
+}
+
+.method-flow p {
+  color: #5d6b7d;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
 .case-solution {
   padding-top: 118px;
   padding-bottom: 118px;
@@ -1130,6 +1230,10 @@ p {
 
 .case-video-shell {
   box-shadow: 0 26px 76px rgba(18, 21, 28, 0.14);
+}
+
+.tech-video-embed {
+  margin-top: 54px;
 }
 
 .case-sticky-layout {
@@ -1499,6 +1603,9 @@ p {
 .detail-reveal .case-focus-grid article,
 .detail-reveal .signal-flow article,
 .detail-reveal .case-process-list article,
+.detail-reveal .method-before-after div,
+.detail-reveal .method-before-after em,
+.detail-reveal .method-flow article,
 .detail-reveal .strategy-image,
 .detail-reveal .strategy-panels article,
 .detail-reveal .system-column,
@@ -1528,6 +1635,9 @@ p {
 .detail-reveal.is-visible .case-focus-grid article,
 .detail-reveal.is-visible .signal-flow article,
 .detail-reveal.is-visible .case-process-list article,
+.detail-reveal.is-visible .method-before-after div,
+.detail-reveal.is-visible .method-before-after em,
+.detail-reveal.is-visible .method-flow article,
 .detail-reveal.is-visible .strategy-image,
 .detail-reveal.is-visible .strategy-panels article,
 .detail-reveal.is-visible .system-column,
@@ -1561,6 +1671,8 @@ p {
 .detail-reveal.is-visible .case-focus-grid article:nth-child(1),
 .detail-reveal.is-visible .signal-flow article:nth-child(1),
 .detail-reveal.is-visible .case-process-list article:nth-child(1),
+.detail-reveal.is-visible .method-before-after div:nth-child(1),
+.detail-reveal.is-visible .method-flow article:nth-child(1),
 .detail-reveal.is-visible .strategy-image,
 .detail-reveal.is-visible .system-column:nth-child(1),
 .detail-reveal.is-visible .tech-media-card:nth-child(1),
@@ -1575,6 +1687,8 @@ p {
 .detail-reveal.is-visible .case-focus-grid article:nth-child(2),
 .detail-reveal.is-visible .signal-flow article:nth-child(2),
 .detail-reveal.is-visible .case-process-list article:nth-child(2),
+.detail-reveal.is-visible .method-before-after em,
+.detail-reveal.is-visible .method-flow article:nth-child(2),
 .detail-reveal.is-visible .strategy-panels article:nth-child(1),
 .detail-reveal.is-visible .system-column:nth-child(2),
 .detail-reveal.is-visible .tech-media-card:nth-child(2),
@@ -1589,6 +1703,8 @@ p {
 .detail-reveal.is-visible .case-focus-grid article:nth-child(3),
 .detail-reveal.is-visible .signal-flow article:nth-child(3),
 .detail-reveal.is-visible .case-process-list article:nth-child(3),
+.detail-reveal.is-visible .method-before-after div:nth-child(3),
+.detail-reveal.is-visible .method-flow article:nth-child(3),
 .detail-reveal.is-visible .strategy-panels article:nth-child(2),
 .detail-reveal.is-visible .system-column:nth-child(3),
 .detail-reveal.is-visible .tech-media-card:nth-child(3) {
@@ -1599,6 +1715,7 @@ p {
 .detail-reveal.is-visible .case-meta-grid div:nth-child(4),
 .detail-reveal.is-visible .signal-flow article:nth-child(4),
 .detail-reveal.is-visible .case-process-list article:nth-child(4),
+.detail-reveal.is-visible .method-flow article:nth-child(4),
 .detail-reveal.is-visible .strategy-panels article:nth-child(3),
 .detail-reveal.is-visible .system-column:nth-child(4),
 .detail-reveal.is-visible .tech-media-card:nth-child(4) {
@@ -1665,6 +1782,7 @@ p {
   .detail-hero,
   .visual-display-grid,
   .case-overview-grid,
+  .method-before-after,
   .case-sticky-layout,
   .strategy-grid,
   .reflection-grid {
@@ -1685,6 +1803,7 @@ p {
   .detail-gallery,
   .case-focus-grid,
   .signal-flow,
+  .method-flow,
   .system-map,
   .tech-evidence-board,
   .brochure-pages,
@@ -1705,6 +1824,7 @@ p {
   }
 
   .signal-flow::before,
+  .method-flow::before,
   .system-column:not(:last-child)::after {
     display: none;
   }
@@ -1774,6 +1894,7 @@ p {
   .detail-gallery,
   .case-focus-grid,
   .signal-flow,
+  .method-flow,
   .system-map,
   .tech-evidence-board,
   .brochure-pages,
@@ -1853,6 +1974,25 @@ p {
 
   .case-sticky-layout {
     gap: 26px;
+  }
+
+  .method-board {
+    padding: 22px;
+  }
+
+  .method-before-after {
+    grid-template-columns: 1fr;
+  }
+
+  .method-before-after div {
+    min-height: 150px;
+  }
+
+  .method-before-after em {
+    min-width: 100%;
+    min-height: auto;
+    border-radius: 8px;
+    padding: 16px;
   }
 
   .pdf-shell {
