@@ -1404,6 +1404,11 @@ p {
     transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.tech-media-card:not(.tech-media-card-process) img {
+  object-fit: contain;
+  padding: 10px;
+}
+
 .tech-media-card span {
   position: absolute;
   left: 14px;
