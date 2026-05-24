@@ -1388,7 +1388,7 @@ p {
 .tech-media-card-process {
   border-color: rgba(226, 232, 241, 0.62);
   box-shadow: 0 8px 24px rgba(18, 21, 28, 0.045);
-  opacity: 0.58;
+  opacity: 0.72;
 }
 
 .tech-media-card img {
@@ -1425,8 +1425,8 @@ p {
 .tech-media-card.is-selected {
   z-index: 2;
   border-color: rgba(53, 119, 232, 0.34);
-  box-shadow: 0 34px 88px rgba(18, 21, 28, 0.2);
-  transform: translateY(-18px) scale(1.22);
+  box-shadow: 0 24px 64px rgba(18, 21, 28, 0.16);
+  transform: translateY(-8px) scale(1.06);
   animation-play-state: paused;
   outline: none;
   opacity: 1;
@@ -1436,10 +1436,8 @@ p {
 .tech-media-card:focus-visible img,
 .tech-media-card.is-selected img {
   filter: grayscale(0) saturate(1.03) contrast(1.02);
-  object-fit: contain;
   opacity: 1;
-  padding: 0;
-  transform: scale(1);
+  transform: scale(1.035);
 }
 
 .tech-media-card:hover span,
