@@ -271,6 +271,7 @@ p {
 .reveal-section .section-heading .eyebrow,
 .reveal-section .section-heading h2,
 .reveal-section .section-heading p,
+.reveal-section .about-snapshot,
 .reveal-section .capability-grid article,
 .reveal-section .timeline article,
 .reveal-section .workflow-map article {
@@ -286,6 +287,7 @@ p {
 .reveal-section.is-visible .section-heading .eyebrow,
 .reveal-section.is-visible .section-heading h2,
 .reveal-section.is-visible .section-heading p,
+.reveal-section.is-visible .about-snapshot,
 .reveal-section.is-visible .capability-grid article,
 .reveal-section.is-visible .timeline article,
 .reveal-section.is-visible .workflow-map article {
@@ -304,6 +306,10 @@ p {
 
 .reveal-section.is-visible .section-heading p:nth-of-type(2) {
   transition-delay: 260ms;
+}
+
+.reveal-section.is-visible .about-snapshot {
+  transition-delay: 300ms;
 }
 
 .reveal-section.is-visible .capability-grid article:nth-child(1),
@@ -359,6 +365,56 @@ p {
   border-top: 1px solid var(--line);
 }
 
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 42px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.about-layout .section-heading {
+  margin-bottom: 0;
+}
+
+.about-snapshot {
+  display: grid;
+  gap: 12px;
+  border: 1px solid rgba(53, 119, 232, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(237, 246, 255, 0.9)),
+    #fff;
+  box-shadow: 0 18px 48px rgba(53, 119, 232, 0.08);
+  padding: 22px;
+}
+
+.about-snapshot div {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 14px;
+  align-items: center;
+  border-bottom: 1px solid rgba(53, 119, 232, 0.1);
+  padding-bottom: 12px;
+}
+
+.about-snapshot div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.about-snapshot span {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.about-snapshot strong {
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
 .capability-grid,
 .timeline,
 .workflow-map {
@@ -390,6 +446,101 @@ p {
 .timeline h3,
 .workflow-map h3 {
   margin: 18px 0 10px;
+}
+
+.capability-visual-grid {
+  grid-template-columns: 1.55fr repeat(3, minmax(0, 1fr));
+}
+
+.capability-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+}
+
+.capability-card::before {
+  content: "";
+  position: absolute;
+  inset: auto 18px 18px auto;
+  width: 76px;
+  height: 76px;
+  border: 1px solid rgba(53, 119, 232, 0.16);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(53, 119, 232, 0.12), transparent 62%);
+  opacity: 0.7;
+}
+
+.capability-card-featured {
+  border-color: rgba(53, 119, 232, 0.18);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(239, 246, 255, 0.96)),
+    #fff;
+}
+
+.capability-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.capability-card-head small {
+  border: 1px solid rgba(53, 119, 232, 0.16);
+  border-radius: 999px;
+  color: #58708f;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
+  padding: 6px 9px;
+  text-transform: uppercase;
+}
+
+.capability-card p {
+  position: relative;
+  z-index: 1;
+}
+
+.workflow-pills,
+.capability-tags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.workflow-pills span,
+.capability-tags span {
+  border: 1px solid rgba(53, 119, 232, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: #3d5878;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 7px 10px;
+}
+
+.workflow-pills span {
+  color: var(--blue);
+}
+
+.capability-meter {
+  position: relative;
+  z-index: 1;
+  height: 7px;
+  border-radius: 999px;
+  background: #e9eff7;
+  margin: 20px 0 4px;
+  overflow: hidden;
+}
+
+.capability-meter i {
+  display: block;
+  width: var(--meter);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7fb2ff, var(--blue));
 }
 
 .ai-workflow-section {
@@ -942,6 +1093,7 @@ p {
 
 @media (max-width: 920px) {
   .hero,
+  .about-layout,
   .project-card,
   .project-card.featured,
   .section-heading.split,
@@ -956,6 +1108,7 @@ p {
   }
 
   .capability-grid,
+  .capability-visual-grid,
   .timeline,
   .workflow-map,
   .gallery,
@@ -1002,6 +1155,7 @@ p {
   }
 
   .capability-grid,
+  .capability-visual-grid,
   .timeline,
   .workflow-map,
   .gallery,
@@ -1015,6 +1169,18 @@ p {
 
   .project-card {
     padding: 12px;
+  }
+
+  .about-snapshot {
+    padding: 18px;
+  }
+
+  .about-snapshot div {
+    grid-template-columns: 44px 1fr;
+  }
+
+  .capability-card {
+    min-height: auto;
   }
 
   .project-media,
