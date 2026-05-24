@@ -6,91 +6,244 @@
     <title>AI辅助交互装置系统设计</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="detail-page">
+  <body class="detail-page case-study-page">
     <canvas class="ambient-canvas" aria-hidden="true"></canvas>
     <main>
-      <section class="detail-hero detail-reveal">
-        <div>
+      <section class="detail-hero case-hero detail-reveal is-visible">
+        <div class="case-hero-copy">
           <a class="back-link" href="./index.html#projects">返回作品列表</a>
-          <p class="eyebrow">01 · Creative Technology</p>
-          <h1>AI辅助交互装置系统设计</h1>
+          <p class="eyebrow">01 / Creative Technology</p>
+          <p class="case-concept">一句话概念</p>
+          <h1>把身体信号转化为可感知的互动反馈</h1>
           <p class="lead">
-            基于 AI 工作流的多模块交互装置设计，整合 Arduino、脉搏传感、RGB 颜色识别、
-            电机控制与现场调试，构建可运行的沉浸式互动体验。
+            基于 AI 工作流和 Arduino 的多模块沉浸式交互装置，通过脉搏感应、电机系统与灯光反馈构建实时互动体验。
           </p>
+          <div class="case-hero-tags" aria-label="项目关键词">
+            <span>AI 工作流</span>
+            <span>交互装置</span>
+            <span>心率感应</span>
+            <span>实时反馈</span>
+          </div>
         </div>
-        <div class="detail-cover asset-frame">
+        <figure class="detail-cover case-hero-media asset-frame">
           <img loading="lazy" decoding="async" src="./assets/project-01-cover.jpg" alt="AI辅助交互装置系统设计封面" />
+        </figure>
+      </section>
+
+      <section class="case-section case-overview detail-reveal" aria-labelledby="overview-title">
+        <div class="case-section-heading">
+          <p class="eyebrow">Overview</p>
+          <h2 id="overview-title">3 秒理解项目</h2>
+        </div>
+        <div class="case-overview-grid">
+          <article class="case-statement">
+            <span>核心结论</span>
+            <p>我负责把一个课程装置实验，推进为可运行、可演示、可迭代的交互系统原型。</p>
+          </article>
+          <dl class="case-meta-grid">
+            <div>
+              <dt>项目类型</dt>
+              <dd>AI 辅助交互装置</dd>
+            </div>
+            <div>
+              <dt>我的职责</dt>
+              <dd>系统设计 / 硬件调试 / AI workflow</dd>
+            </div>
+            <div>
+              <dt>核心工具</dt>
+              <dd>Arduino / ChatGPT / 传感器 / 电机</dd>
+            </div>
+            <div>
+              <dt>输出形式</dt>
+              <dd>现场装置 / 运行视频 / 系统原型</dd>
+            </div>
+          </dl>
         </div>
       </section>
 
-      <section class="detail-section detail-reveal">
-        <div class="section-heading">
-          <p class="eyebrow">Demo video</p>
-          <h2>视频演示</h2>
+      <section class="case-section case-problem detail-reveal" aria-labelledby="problem-title">
+        <div class="case-section-heading">
+          <p class="eyebrow">Core question</p>
+          <h2 id="problem-title">核心问题</h2>
+          <p>如何让一个装置不只是“会动”，而是能根据人的身体状态产生实时反馈？</p>
         </div>
-        <div class="video-shell">
+        <div class="case-focus-grid">
+          <article>
+            <span>01</span>
+            <h3>输入不稳定</h3>
+            <p>脉搏、颜色识别和现场环境都存在波动，需要建立可调试的输入判断方式。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>模块关系复杂</h3>
+            <p>传感器、电机、灯光和供电系统需要协同运行，而不是单点功能演示。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>体验需要被感知</h3>
+            <p>装置反馈要有明确的情绪节奏，让观众能感受到“身体信号正在影响系统”。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-solution detail-reveal" aria-labelledby="solution-title">
+        <div class="case-section-heading">
+          <p class="eyebrow">Solution</p>
+          <h2 id="solution-title">解决方案</h2>
+          <p>把体验拆成一条清晰的交互链路：身体输入、模块处理、现场反馈、AI 辅助迭代。</p>
+        </div>
+        <div class="signal-flow" aria-label="交互系统链路">
+          <article>
+            <span>Input</span>
+            <h3>身体信号</h3>
+            <p>脉搏感应 / 颜色识别</p>
+          </article>
+          <article>
+            <span>Logic</span>
+            <h3>Arduino 控制</h3>
+            <p>阈值判断 / 模块联动</p>
+          </article>
+          <article>
+            <span>Output</span>
+            <h3>灯光与电机反馈</h3>
+            <p>实时运动 / RGB 氛围</p>
+          </article>
+          <article>
+            <span>Iteration</span>
+            <h3>AI 辅助调试</h3>
+            <p>资料研究 / Debug / 方案扩展</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-video detail-reveal" aria-labelledby="video-title">
+        <div class="case-section-heading">
+          <p class="eyebrow">Demo video</p>
+          <h2 id="video-title">运行结果</h2>
+          <p>优先展示可运行状态，让项目从文字说明变成可被判断的体验原型。</p>
+        </div>
+        <div class="video-shell case-video-shell">
           <video preload="metadata" class="project-video" controls playsinline poster="./assets/project-01-cover.jpg">
             <source src="./assets/project-01-demo-web.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
 
-      <section class="detail-section detail-reveal">
-        <div class="detail-grid">
-          <article>
-            <h3>项目定位</h3>
-            <p>基于AI工作流和Arduino的多模块沉浸式交互装置，通过脉搏感应、电机系统与灯光反馈构建实时互动体验。</p>
-          </article>
-          <article>
-            <h3>我的职责</h3>
-            <p>交互系统设计、AI workflow 组织、硬件调试、模块搭建、电源系统重构与现场落地。</p>
-          </article>
-          <article>
-            <h3>设计流程</h3>
-            <p>从交互设想出发，经过 AI 辅助调研、模块测试、硬件调试和现场验证，逐步完成可运行原型。</p>
-          </article>
+      <section class="case-section case-process detail-reveal" aria-labelledby="process-title">
+        <div class="case-sticky-layout">
+          <div class="case-sticky-copy">
+            <p class="eyebrow">Design process</p>
+            <h2 id="process-title">从概念到可运行原型</h2>
+            <p>设计过程不是线性完成，而是在 AI 调研、硬件测试、现场反馈之间不断回路迭代。</p>
+          </div>
+          <div class="case-process-list">
+            <article>
+              <span>Step 01</span>
+              <h3>交互设想拆解</h3>
+              <p>明确“身体信号触发装置反馈”的体验目标，并拆成输入、处理、输出三个层级。</p>
+            </article>
+            <article>
+              <span>Step 02</span>
+              <h3>AI 辅助研究</h3>
+              <p>使用 AI 辅助检索传感器资料、整理接线方案、定位代码报错与硬件兼容问题。</p>
+            </article>
+            <article>
+              <span>Step 03</span>
+              <h3>模块测试与重构</h3>
+              <p>分别测试脉搏传感、电机控制、RGB 灯光和供电稳定性，再整合成多模块系统。</p>
+            </article>
+            <article>
+              <span>Step 04</span>
+              <h3>现场运行验证</h3>
+              <p>根据装置运行效果调整反馈节奏，让互动结果更容易被观看者理解和感知。</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="detail-section detail-reveal">
-        <div class="section-heading">
-          <p class="eyebrow">AI Workflow</p>
-          <h2>交互装置系统流程</h2>
+      <section class="case-section case-strategy detail-reveal" aria-labelledby="strategy-title">
+        <div class="case-section-heading">
+          <p class="eyebrow">Interaction & visual strategy</p>
+          <h2 id="strategy-title">交互与视觉策略</h2>
         </div>
-        <div class="process-flow">
-          <article>
-            <span>输入</span>
-            <h3>用户身体信号</h3>
-            <p>通过脉搏感应与颜色识别捕捉用户输入，将身体感知转化为互动触发条件。</p>
-          </article>
-          <article>
-            <span>处理</span>
-            <h3>Arduino 模块控制</h3>
-            <p>整合传感器、电机、灯光和供电模块，建立稳定的实时反馈逻辑。</p>
-          </article>
-          <article>
-            <span>反馈</span>
-            <h3>电机与灯光输出</h3>
-            <p>通过机械运动与 RGB 光效回应用户状态，形成可被感知的沉浸式交互。</p>
-          </article>
-          <article>
-            <span>AI 辅助</span>
-            <h3>调研 / Debug / 迭代</h3>
-            <p>用 AI 辅助资料检索、代码排查、接线问题定位和多模块扩展方案整理。</p>
-          </article>
+        <div class="strategy-grid">
+          <figure class="asset-frame strategy-image">
+            <img loading="lazy" decoding="async" src="./assets/project-01-01.jpg" alt="装置现场结构图" />
+          </figure>
+          <div class="strategy-panels">
+            <article>
+              <h3>让反馈可见</h3>
+              <p>用灯光变化和机械运动把不可见的身体状态转译成现场可见的反馈。</p>
+            </article>
+            <article>
+              <h3>让系统可调试</h3>
+              <p>将复杂硬件拆成可单独测试的模块，降低现场搭建和故障排查成本。</p>
+            </article>
+            <article>
+              <h3>让 AI 参与过程</h3>
+              <p>AI 不只是生成内容，而是参与资料研究、代码排错和方案组织的创作工具。</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="detail-section detail-reveal">
-        <div class="section-heading">
-          <p class="eyebrow">Process</p>
-          <h2>过程素材</h2>
+      <section class="case-section case-tech detail-reveal" aria-labelledby="tech-title">
+        <div class="case-section-heading">
+          <p class="eyebrow">Technical system</p>
+          <h2 id="tech-title">技术落地</h2>
+          <p>用系统结构图替代长段说明，展示装置从输入到输出的真实运行关系。</p>
         </div>
-        <div class="detail-gallery">
+        <div class="system-map" aria-label="装置技术结构">
+          <div class="system-column">
+            <span>输入层</span>
+            <strong>Pulse Sensor</strong>
+            <strong>RGB Color Detect</strong>
+          </div>
+          <div class="system-column">
+            <span>控制层</span>
+            <strong>Arduino</strong>
+            <strong>Threshold Logic</strong>
+          </div>
+          <div class="system-column">
+            <span>输出层</span>
+            <strong>Motor System</strong>
+            <strong>Light Feedback</strong>
+          </div>
+          <div class="system-column">
+            <span>迭代层</span>
+            <strong>AI Debug</strong>
+            <strong>Module Expansion</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section detail-reveal" aria-labelledby="material-title">
+        <div class="case-section-heading">
+          <p class="eyebrow">Process materials</p>
+          <h2 id="material-title">过程素材</h2>
+          <p>现场照片、模块测试和运行截图作为证据，说明项目不是概念展示，而是完成过落地验证的系统。</p>
+        </div>
+        <div class="detail-gallery case-gallery">
           <figure class="asset-frame"><img loading="lazy" decoding="async" src="./assets/project-01-01.jpg" alt="装置过程图 01" /></figure>
           <figure class="asset-frame"><img loading="lazy" decoding="async" src="./assets/project-01-02.jpg" alt="装置过程图 02" /></figure>
           <figure class="asset-frame"><img loading="lazy" decoding="async" src="./assets/project-01-03.jpg" alt="装置过程图 03" /></figure>
+        </div>
+      </section>
+
+      <section class="case-section case-reflection detail-reveal" aria-labelledby="reflection-title">
+        <div class="case-section-heading">
+          <p class="eyebrow">Result & reflection</p>
+          <h2 id="reflection-title">结果与反思</h2>
+        </div>
+        <div class="reflection-grid">
+          <article>
+            <span>结果</span>
+            <p>完成多模块交互装置的运行验证，形成可展示的视频、现场照片和系统结构记录。</p>
+          </article>
+          <article>
+            <span>收获</span>
+            <p>更清楚地理解了 AI 在创意工程中的价值：它可以帮助我更快组织问题、排查错误，并把实验推进到可验证阶段。</p>
+          </article>
         </div>
       </section>
     </main>
