@@ -1198,8 +1198,8 @@ p {
 .method-poster-head {
   position: relative;
   z-index: 1;
-  width: min(100%, 1040px);
-  min-height: clamp(250px, 31vw, 360px);
+  width: min(100%, 1060px);
+  min-height: clamp(250px, 28vw, 330px);
   margin: 0 auto;
 }
 
@@ -1242,10 +1242,10 @@ p {
 }
 
 .method-poster-head .method-title-main {
-  left: clamp(62px, 7.3vw, 116px);
-  top: clamp(70px, 8.2vw, 118px);
-  font-size: clamp(112px, 15.2vw, 210px);
-  line-height: 0.8;
+  left: clamp(70px, 9vw, 112px);
+  top: clamp(76px, 8vw, 104px);
+  font-size: clamp(96px, 11.2vw, 158px);
+  line-height: 0.84;
 }
 
 .method-poster-head .method-title-main em {
@@ -1253,9 +1253,10 @@ p {
 }
 
 .method-poster-head .method-title-end {
-  right: clamp(20px, 4vw, 62px);
-  top: clamp(158px, 16.1vw, 232px);
-  font-size: clamp(30px, 3.55vw, 52px);
+  left: clamp(640px, 66vw, 760px);
+  right: auto;
+  top: clamp(166px, 14.5vw, 206px);
+  font-size: clamp(28px, 3vw, 42px);
   white-space: nowrap;
 }
 
