@@ -1019,19 +1019,11 @@ p {
 
 .overview-poster {
   position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(249, 251, 255, 0.98), rgba(235, 242, 252, 0.74));
-  padding: clamp(28px, 5vw, 64px);
+  padding: 0;
 }
 
 .overview-poster::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(53, 119, 232, 0.07), transparent 38%),
-    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.45));
-  pointer-events: none;
+  display: none;
 }
 
 .overview-kicker {
@@ -1051,7 +1043,7 @@ p {
   display: grid;
   grid-template-columns: 0.42fr 1fr;
   gap: clamp(36px, 7vw, 96px);
-  margin-top: clamp(46px, 7vw, 84px);
+  margin-top: clamp(34px, 6vw, 68px);
   align-items: start;
 }
 
@@ -1075,7 +1067,6 @@ p {
 
 .overview-copy {
   display: grid;
-  gap: 22px;
   max-width: 800px;
 }
 
@@ -1113,7 +1104,7 @@ p {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   counter-reset: overview;
   gap: clamp(18px, 4vw, 46px);
-  margin: clamp(42px, 6vw, 70px) 0 0;
+  margin: clamp(34px, 5vw, 56px) 0 0;
 }
 
 .overview-strip div {
