@@ -1293,9 +1293,10 @@ p {
 
 .method-poster-head .method-title-main {
   left: clamp(70px, 9vw, 112px);
-  top: clamp(76px, 8vw, 104px);
+  top: clamp(64px, 7.2vw, 92px);
+  padding: 0.12em 0.06em 0.18em;
   font-size: clamp(96px, 11.2vw, 158px);
-  line-height: 0.84;
+  line-height: 1;
 }
 
 .method-poster-head .method-title-main em {
@@ -1306,7 +1307,9 @@ p {
   left: clamp(640px, 66vw, 760px);
   right: auto;
   top: clamp(166px, 14.5vw, 206px);
+  padding: 0.12em 0.08em 0.16em;
   font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.1;
   white-space: nowrap;
 }
 
@@ -2195,7 +2198,7 @@ p {
 
   .method-poster-head .method-title-main {
     left: clamp(40px, 9vw, 72px);
-    top: clamp(72px, 18vw, 102px);
+    top: clamp(58px, 15vw, 86px);
     font-size: clamp(86px, 23vw, 128px);
   }
 
