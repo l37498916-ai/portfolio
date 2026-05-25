@@ -1113,23 +1113,18 @@ p {
   padding: 0;
 }
 
-.overview-strip div::before {
-  content: "0" counter(overview);
-  display: block;
-  margin-bottom: 14px;
-  color: rgba(53, 119, 232, 0.5);
+.overview-strip dt {
+  color: rgba(53, 119, 232, 0.72);
   font-size: 13px;
   font-weight: 900;
 }
 
-.overview-strip dt {
-  color: #7d91ad;
-  font-size: 13px;
-  font-weight: 900;
+.overview-strip dt::before {
+  content: "0" counter(overview) " ";
 }
 
 .overview-strip dd {
-  margin: 10px 0 0;
+  margin: 12px 0 0;
   color: var(--ink);
   font-size: 16px;
   font-weight: 800;
