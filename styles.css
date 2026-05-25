@@ -1198,62 +1198,76 @@ p {
 .method-poster-head {
   position: relative;
   z-index: 1;
-  max-width: none;
+  width: min(100%, 1040px);
+  min-height: clamp(250px, 31vw, 360px);
+  margin: 0 auto;
 }
 
 .method-poster-head h2 {
-  display: grid;
-  grid-template-columns: 1fr 1.35fr 1.05fr;
-  grid-template-rows: auto auto;
-  column-gap: clamp(18px, 4vw, 64px);
-  row-gap: clamp(16px, 2vw, 28px);
-  align-items: end;
-  margin-top: clamp(28px, 4vw, 54px);
-  font-size: clamp(28px, 4vw, 58px);
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  font-size: inherit;
   line-height: 1;
 }
 
-.method-poster-head h2 em {
+.method-poster-head .method-title-start,
+.method-poster-head .method-title-main,
+.method-poster-head .method-title-end {
+  position: absolute;
+  display: block;
+  color: var(--ink);
+  font-weight: 950;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.method-poster-head .method-title-start em,
+.method-poster-head .method-title-main em,
+.method-poster-head .method-title-end em {
   color: var(--blue);
   font-style: normal;
 }
 
-.method-title-start {
-  grid-column: 1 / 2;
-  grid-row: 1;
-  align-self: end;
-  font-size: clamp(30px, 4vw, 58px);
+.method-poster-head .method-title-start {
+  left: 0;
+  top: 0;
+  font-size: clamp(42px, 4.7vw, 68px);
 }
 
-.method-title-main {
-  grid-column: 1 / 3;
-  grid-row: 2;
-  color: var(--ink);
-  font-size: clamp(90px, 13.5vw, 188px);
-  font-weight: 950;
-  line-height: 0.78;
+.method-poster-head .method-title-start em {
+  margin-left: 14px;
+  font-size: 0.58em;
+  vertical-align: 0.08em;
 }
 
-.method-title-main em {
-  font-size: 1.08em;
+.method-poster-head .method-title-main {
+  left: clamp(62px, 7.3vw, 116px);
+  top: clamp(70px, 8.2vw, 118px);
+  font-size: clamp(112px, 15.2vw, 210px);
+  line-height: 0.8;
 }
 
-.method-title-end {
-  grid-column: 3 / 4;
-  grid-row: 2;
-  justify-self: end;
-  align-self: end;
-  margin-bottom: clamp(8px, 1.4vw, 20px);
-  font-size: clamp(26px, 3.3vw, 48px);
+.method-poster-head .method-title-main em {
+  font-size: 1em;
+}
+
+.method-poster-head .method-title-end {
+  right: clamp(20px, 4vw, 62px);
+  top: clamp(158px, 16.1vw, 232px);
+  font-size: clamp(30px, 3.55vw, 52px);
   white-space: nowrap;
 }
 
 .method-poster-head p {
+  position: absolute;
+  left: clamp(62px, 7.3vw, 116px);
+  right: 0;
+  bottom: 0;
   max-width: none;
-  margin-top: clamp(24px, 3vw, 38px);
-  margin-left: clamp(70px, 11vw, 160px);
+  margin: 0;
   color: var(--text);
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(17px, 1.7vw, 23px);
   line-height: 1.65;
 }
 
@@ -1940,6 +1954,10 @@ p {
     gap: 12px;
   }
 
+  .method-poster-head {
+    min-height: clamp(270px, 70vw, 360px);
+  }
+
   .method-title-start,
   .method-title-main,
   .method-title-end {
@@ -1947,8 +1965,29 @@ p {
     grid-row: auto;
   }
 
-  .method-title-end {
+  .method-poster-head .method-title-start {
+    left: 0;
+    top: 0;
+    font-size: clamp(38px, 10vw, 58px);
+  }
+
+  .method-poster-head .method-title-main {
+    left: clamp(40px, 9vw, 72px);
+    top: clamp(72px, 18vw, 102px);
+    font-size: clamp(86px, 23vw, 128px);
+  }
+
+  .method-poster-head .method-title-end {
+    left: clamp(40px, 9vw, 72px);
+    right: auto;
+    top: clamp(168px, 43vw, 226px);
     justify-self: start;
+    font-size: clamp(26px, 7vw, 42px);
+  }
+
+  .method-poster-head p {
+    left: 0;
+    font-size: 16px;
   }
 
   .capability-grid,
