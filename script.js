@@ -44,6 +44,33 @@ if (detailRevealSections.length > 0) {
   detailRevealSections.forEach((section) => detailObserver.observe(section));
 }
 
+document.querySelectorAll(".reading-progress").forEach((progress) => {
+  const value = progress.querySelector("strong");
+  let ticking = false;
+
+  function updateProgress() {
+    const scrollable = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const ratio = Math.min(1, Math.max(0, window.scrollY / scrollable));
+    progress.style.setProperty("--read-progress", ratio.toFixed(4));
+    if (value) {
+      value.textContent = `${Math.round(ratio * 100)}%`;
+    }
+    ticking = false;
+  }
+
+  function requestProgressUpdate() {
+    if (ticking) {
+      return;
+    }
+    ticking = true;
+    requestAnimationFrame(updateProgress);
+  }
+
+  updateProgress();
+  window.addEventListener("scroll", requestProgressUpdate, { passive: true });
+  window.addEventListener("resize", requestProgressUpdate);
+});
+
 const canvas = document.querySelector("#opening-canvas");
 
 if (canvas) {
