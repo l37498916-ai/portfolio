@@ -71,6 +71,26 @@ document.querySelectorAll(".reading-progress").forEach((progress) => {
   window.addEventListener("resize", requestProgressUpdate);
 });
 
+document.querySelectorAll("[data-zero-marquee] .zero-marquee-row").forEach((row) => {
+  const track = row.querySelector(".zero-marquee-track");
+  const set = row.querySelector(".zero-marquee-set");
+
+  if (!track || !set) {
+    return;
+  }
+
+  const speed = Number(row.dataset.speed);
+  if (Number.isFinite(speed) && speed > 0) {
+    row.style.setProperty("--marquee-duration", `${speed}s`);
+  }
+
+  if (track.querySelectorAll(".zero-marquee-set").length === 1) {
+    const clone = set.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    track.appendChild(clone);
+  }
+});
+
 const canvas = document.querySelector("#opening-canvas");
 
 if (canvas) {
