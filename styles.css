@@ -2570,6 +2570,87 @@ p {
   transition-delay: 380ms;
 }
 
+.zero-overview.detail-reveal .zero-overview-copy {
+  transform: translateX(-44px);
+  filter: blur(10px);
+}
+
+.zero-overview.detail-reveal .zero-overview-text {
+  transform: translateX(44px);
+  filter: blur(10px);
+}
+
+.zero-overview.detail-reveal.is-visible .zero-overview-copy,
+.zero-overview.detail-reveal.is-visible .zero-overview-text {
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+.zero-overview.detail-reveal.is-visible .zero-overview-text {
+  transition-delay: 140ms;
+}
+
+.zero-role.detail-reveal .zero-role-head {
+  transform: translateY(40px) scale(0.96);
+  filter: blur(8px);
+}
+
+.zero-role.detail-reveal .zero-role-body {
+  transform: translateY(56px);
+  filter: blur(8px);
+}
+
+.zero-role.detail-reveal.is-visible .zero-role-head,
+.zero-role.detail-reveal.is-visible .zero-role-body {
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.zero-role.detail-reveal.is-visible .zero-role-body {
+  transition-delay: 120ms;
+}
+
+.zero-assets.detail-reveal .zero-assets-heading {
+  transform: translateY(26px);
+  filter: blur(8px);
+}
+
+.zero-assets.detail-reveal .zero-asset-card,
+.zero-assets.detail-reveal .zero-assets-strip img,
+.zero-assets.detail-reveal .zero-prop-pool img {
+  transform: translateY(34px) scale(0.94);
+  filter: blur(10px);
+}
+
+.zero-assets.detail-reveal.is-visible .zero-assets-heading,
+.zero-assets.detail-reveal.is-visible .zero-asset-card,
+.zero-assets.detail-reveal.is-visible .zero-assets-strip img,
+.zero-assets.detail-reveal.is-visible .zero-prop-pool img {
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.zero-premise.detail-reveal .zero-premise-title {
+  transform: translateX(-38px);
+  filter: blur(10px);
+}
+
+.zero-premise.detail-reveal .zero-premise-grid article:nth-child(odd) {
+  transform: translateX(38px);
+  filter: blur(8px);
+}
+
+.zero-premise.detail-reveal .zero-premise-grid article:nth-child(even) {
+  transform: translateX(56px);
+  filter: blur(8px);
+}
+
+.zero-premise.detail-reveal.is-visible .zero-premise-title,
+.zero-premise.detail-reveal.is-visible .zero-premise-grid article {
+  transform: translateX(0);
+  filter: blur(0);
+}
+
 @keyframes titleRise {
   from {
     opacity: 0;
