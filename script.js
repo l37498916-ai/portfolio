@@ -26,6 +26,39 @@ if (revealSections.length > 0) {
   revealSections.forEach((section) => revealObserver.observe(section));
 }
 
+document.querySelectorAll("[data-about-objects]").forEach((stage) => {
+  const objects = Array.from(stage.querySelectorAll("[data-object-panel]"));
+  const panels = Array.from(stage.querySelectorAll("[data-object-panel-content]"));
+
+  function activateObject(target) {
+    objects.forEach((object) => {
+      const isActive = object.dataset.objectPanel === target;
+      object.classList.toggle("is-active", isActive);
+      object.setAttribute("aria-pressed", String(isActive));
+    });
+
+    panels.forEach((panel) => {
+      const isActive = panel.dataset.objectPanelContent === target;
+      if (isActive) {
+        panel.hidden = false;
+        requestAnimationFrame(() => panel.classList.add("is-active"));
+        return;
+      }
+
+      panel.classList.remove("is-active");
+      window.setTimeout(() => {
+        if (!panel.classList.contains("is-active")) {
+          panel.hidden = true;
+        }
+      }, 260);
+    });
+  }
+
+  objects.forEach((object) => {
+    object.addEventListener("click", () => activateObject(object.dataset.objectPanel));
+  });
+});
+
 const detailRevealSections = document.querySelectorAll(".detail-reveal");
 
 if (detailRevealSections.length > 0) {

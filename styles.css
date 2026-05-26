@@ -271,6 +271,7 @@ p {
 .reveal-section .section-heading .eyebrow,
 .reveal-section .section-heading h2,
 .reveal-section .section-heading p,
+.reveal-section .about-object-stage,
 .reveal-section .ability-chain-card,
 .reveal-section .capability-grid article,
 .reveal-section .timeline article,
@@ -287,6 +288,7 @@ p {
 .reveal-section.is-visible .section-heading .eyebrow,
 .reveal-section.is-visible .section-heading h2,
 .reveal-section.is-visible .section-heading p,
+.reveal-section.is-visible .about-object-stage,
 .reveal-section.is-visible .ability-chain-card,
 .reveal-section.is-visible .capability-grid article,
 .reveal-section.is-visible .timeline article,
@@ -309,19 +311,23 @@ p {
 }
 
 .reveal-section.is-visible .ability-chain-card:nth-child(1) {
-  transition-delay: 320ms;
+  transition-delay: 440ms;
 }
 
 .reveal-section.is-visible .ability-chain-card:nth-child(2) {
-  transition-delay: 400ms;
+  transition-delay: 520ms;
 }
 
 .reveal-section.is-visible .ability-chain-card:nth-child(3) {
-  transition-delay: 480ms;
+  transition-delay: 600ms;
 }
 
 .reveal-section.is-visible .ability-chain-card:nth-child(4) {
-  transition-delay: 560ms;
+  transition-delay: 680ms;
+}
+
+.reveal-section.is-visible .about-object-stage {
+  transition-delay: 320ms;
 }
 
 .reveal-section.is-visible .capability-grid article:nth-child(1),
@@ -363,6 +369,182 @@ p {
 
 .about-heading {
   max-width: 980px;
+}
+
+.about-object-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
+  gap: clamp(26px, 5vw, 64px);
+  align-items: center;
+  min-height: clamp(520px, 58vw, 710px);
+  margin: clamp(52px, 7vw, 86px) 0 clamp(48px, 7vw, 78px);
+}
+
+.about-object-stage::before {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 19%;
+  bottom: 9%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(18, 21, 28, 0.13), transparent);
+  transform: rotate(-2deg);
+}
+
+.about-object-display {
+  position: relative;
+  min-height: clamp(500px, 55vw, 680px);
+}
+
+.about-object {
+  position: absolute;
+  display: block;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transform: translate3d(0, 0, 0) rotate(var(--object-rotate, 0deg));
+  transition:
+    filter 700ms ease,
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-object::after {
+  content: "";
+  position: absolute;
+  left: 13%;
+  right: 12%;
+  bottom: 8%;
+  z-index: -1;
+  height: 18%;
+  border-radius: 50%;
+  background: rgba(18, 21, 28, 0.12);
+  filter: blur(24px);
+  opacity: 0.45;
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.about-object img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 30px rgba(18, 21, 28, 0.08));
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), filter 700ms ease;
+}
+
+.about-object:hover,
+.about-object:focus-visible,
+.about-object.is-active {
+  z-index: 6;
+  transform: translate3d(0, -10px, 0) rotate(var(--object-rotate, 0deg));
+  outline: 0;
+}
+
+.about-object:hover::after,
+.about-object:focus-visible::after,
+.about-object.is-active::after {
+  opacity: 0.72;
+  transform: scale(1.08);
+}
+
+.about-object:hover img,
+.about-object:focus-visible img,
+.about-object.is-active img {
+  filter: drop-shadow(0 28px 42px rgba(18, 21, 28, 0.14));
+  transform: scale(1.035);
+}
+
+.about-object-me {
+  --object-rotate: -7deg;
+  left: 4%;
+  top: 8%;
+  z-index: 4;
+  width: min(32vw, 360px);
+  animation: objectFloatA 8s ease-in-out infinite;
+}
+
+.about-object-tools {
+  --object-rotate: 2deg;
+  left: 32%;
+  top: 4%;
+  z-index: 3;
+  width: min(43vw, 530px);
+  animation: objectFloatB 9s ease-in-out infinite;
+}
+
+.about-object-projects {
+  --object-rotate: -3deg;
+  left: 15%;
+  bottom: 2%;
+  z-index: 2;
+  width: min(44vw, 560px);
+  animation: objectFloatC 10s ease-in-out infinite;
+}
+
+.about-object-methods {
+  --object-rotate: 8deg;
+  right: 3%;
+  bottom: 12%;
+  z-index: 5;
+  width: min(29vw, 340px);
+  animation: objectFloatB 8.6s ease-in-out reverse infinite;
+}
+
+.about-object-drawer {
+  position: relative;
+  min-height: 300px;
+  padding: clamp(24px, 3vw, 34px) 0 clamp(24px, 3vw, 34px) clamp(24px, 3vw, 38px);
+}
+
+.about-object-drawer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12%;
+  bottom: 12%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(53, 119, 232, 0.42), transparent);
+}
+
+.about-object-panel {
+  opacity: 0;
+  transform: translateX(18px);
+  filter: blur(8px);
+  transition: opacity 520ms ease, transform 520ms cubic-bezier(0.16, 1, 0.3, 1), filter 520ms ease;
+}
+
+.about-object-panel[hidden] {
+  display: none;
+}
+
+.about-object-panel.is-active {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+.about-object-panel span {
+  display: block;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.about-object-panel h3 {
+  margin: 16px 0 14px;
+  color: var(--ink);
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.08;
+}
+
+.about-object-panel p {
+  max-width: 420px;
+  color: var(--text);
+  font-size: clamp(16px, 1.45vw, 19px);
+  line-height: 1.72;
 }
 
 .section-heading.split {
@@ -2809,6 +2991,39 @@ p {
   }
 }
 
+@keyframes objectFloatA {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+@keyframes objectFloatB {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+@keyframes objectFloatC {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -10px;
+  }
+}
+
 @keyframes bluePulse {
   0%,
   100% {
@@ -2829,6 +3044,7 @@ p {
   .project-card.featured,
   .section-heading.split,
   .contact-section,
+  .about-object-stage,
   .detail-hero,
   .visual-display-grid,
   .case-overview-grid,
@@ -2936,6 +3152,33 @@ p {
 
   .zero-asset-identity {
     grid-row: auto;
+  }
+
+  .about-object-stage {
+    gap: 14px;
+    min-height: auto;
+  }
+
+  .about-object-stage::before {
+    right: 6%;
+    bottom: 34%;
+  }
+
+  .about-object-display {
+    min-height: clamp(420px, 72vw, 560px);
+  }
+
+  .about-object-drawer {
+    min-height: auto;
+    padding: 24px 0 0;
+  }
+
+  .about-object-drawer::before {
+    top: 0;
+    bottom: auto;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(53, 119, 232, 0.42), transparent);
   }
 
   .zero-prop-pool {
@@ -3078,6 +3321,42 @@ p {
 
   .project-card {
     padding: 12px;
+  }
+
+  .about-object-stage {
+    margin: 42px 0 54px;
+  }
+
+  .about-object-display {
+    min-height: 430px;
+  }
+
+  .about-object-me {
+    left: -2%;
+    top: 4%;
+    width: 45vw;
+  }
+
+  .about-object-tools {
+    left: 30%;
+    top: 0;
+    width: 63vw;
+  }
+
+  .about-object-projects {
+    left: 4%;
+    bottom: 6%;
+    width: 68vw;
+  }
+
+  .about-object-methods {
+    right: -2%;
+    bottom: 9%;
+    width: 42vw;
+  }
+
+  .about-object-panel h3 {
+    font-size: 26px;
   }
 
   .ability-chain::before {
@@ -3286,6 +3565,9 @@ p {
   .project-card .asset-frame img,
   .gallery .asset-frame img,
   .visual-tags,
+  .about-object,
+  .about-object img,
+  .about-object-panel,
   .reveal-section .section-heading .eyebrow,
   .reveal-section .section-heading h2,
   .reveal-section .section-heading p,
@@ -3319,6 +3601,8 @@ p {
   .project-card:hover,
   .gallery .asset-frame:hover,
   .text-link:hover,
+  .about-object:hover,
+  .about-object:focus-visible,
   .n-sustenance-card:hover {
     transform: none;
   }
@@ -3326,6 +3610,7 @@ p {
   .reveal-section .section-heading .eyebrow,
   .reveal-section .section-heading h2,
   .reveal-section .section-heading p,
+  .about-object-panel,
   .reveal-section .capability-grid article,
   .reveal-section .timeline article,
   .reveal-section .workflow-map article,

@@ -44,6 +44,45 @@
           </p>
         </div>
 
+        <div class="about-object-stage" data-about-objects aria-label="视觉化个人信息展示区">
+          <div class="about-object-display">
+            <button class="about-object about-object-me is-active" type="button" data-object-panel="me" aria-pressed="true">
+              <img loading="lazy" decoding="async" src="./assets/about-object-me.png" alt="工作牌：我" />
+            </button>
+            <button class="about-object about-object-tools" type="button" data-object-panel="tools" aria-pressed="false">
+              <img loading="lazy" decoding="async" src="./assets/about-object-tools.png" alt="工具箱：工具" />
+            </button>
+            <button class="about-object about-object-projects" type="button" data-object-panel="projects" aria-pressed="false">
+              <img loading="lazy" decoding="async" src="./assets/about-object-projects.png" alt="档案袋：项目" />
+            </button>
+            <button class="about-object about-object-methods" type="button" data-object-panel="methods" aria-pressed="false">
+              <img loading="lazy" decoding="async" src="./assets/about-object-methods.png" alt="笔记本：方法" />
+            </button>
+          </div>
+          <aside class="about-object-drawer" aria-live="polite">
+            <div class="about-object-panel is-active" data-object-panel-content="me">
+              <span>Me</span>
+              <h3>AI 创意体验设计方向的艺术与科技学生</h3>
+              <p>我关注沉浸式交互、智能视觉叙事与情绪化体验原型，习惯从氛围、世界观和交互入口开始组织项目。</p>
+            </div>
+            <div class="about-object-panel" data-object-panel-content="tools" hidden>
+              <span>Tools</span>
+              <h3>用 AI 和原型工具快速验证想法</h3>
+              <p>高频使用 ChatGPT、AIGC 图像生成、Figma、Vibe Coding、Godot 与 Unity，把概念推进到可演示的界面或交互原型。</p>
+            </div>
+            <div class="about-object-panel" data-object-panel-content="projects" hidden>
+              <span>Projects</span>
+              <h3>项目围绕叙事、交互和跨领域落地展开</h3>
+              <p>从交互装置到网页视觉小说，再到虚拟仿真系统，我更看重项目是否能被体验、被验证、被继续迭代。</p>
+            </div>
+            <div class="about-object-panel" data-object-panel-content="methods" hidden>
+              <span>Methods</span>
+              <h3>把不确定的创意拆解为可推进路径</h3>
+              <p>通过调研、关键词拆解、素材生成、代码辅助、原型验证和视觉整合，把模糊灵感转化为清晰的工作流。</p>
+            </div>
+          </aside>
+        </div>
+
         <div class="ability-chain" aria-label="个人能力链">
           <article class="ability-chain-card">
             <span class="chain-index">01</span>
