@@ -28,32 +28,72 @@ if (revealSections.length > 0) {
 
 document.querySelectorAll("[data-about-objects]").forEach((stage) => {
   const objects = Array.from(stage.querySelectorAll("[data-object-panel]"));
-  const panels = Array.from(stage.querySelectorAll("[data-object-panel-content]"));
+  const drawer = stage.querySelector(".about-object-drawer");
+  const panels = {
+    me: {
+      label: "About me",
+      title: "关于我",
+      summary: "艺术与科技专业学生，探索 AI 创意体验、智能视觉叙事与沉浸式交互。",
+      items: ["教育背景：广州美术学院", "专业方向：AI × 叙事 × 交互", "职业目标：AI 产品设计 / 创意工程"],
+    },
+    tools: {
+      label: "Tools",
+      title: "工具与技能",
+      summary: "用 AI 和原型工具把想法推进到可演示、可测试、可继续迭代的状态。",
+      items: ["Figma", "Vibe Coding", "Godot", "Unity", "Arduino"],
+    },
+    projects: {
+      label: "Projects",
+      title: "项目经历",
+      summary: "项目围绕叙事型原型、空间化教学体验和跨领域交互装置展开。",
+      items: ["第零夜", "玉雕虚拟仿真", "AI 互动装置"],
+    },
+    methods: {
+      label: "Methods",
+      title: "方法论",
+      summary: "把模糊灵感拆解成可查询、可筛选、可验证的创作路径。",
+      items: ["调研", "生成", "筛选", "原型验证"],
+    },
+  };
+
+  function setDefaultState() {
+    stage.classList.remove("has-selection");
+    objects.forEach((object) => {
+      object.classList.remove("is-active");
+      object.setAttribute("aria-pressed", "false");
+    });
+
+    if (drawer) {
+      drawer.innerHTML = '<div class="about-object-prompt">点击左侧物件，查看我的背景、工具、项目和方法。</div>';
+    }
+  }
 
   function activateObject(target) {
+    const content = panels[target];
+    if (!content || !drawer) {
+      return;
+    }
+
+    stage.classList.add("has-selection");
     objects.forEach((object) => {
       const isActive = object.dataset.objectPanel === target;
       object.classList.toggle("is-active", isActive);
       object.setAttribute("aria-pressed", String(isActive));
     });
 
-    panels.forEach((panel) => {
-      const isActive = panel.dataset.objectPanelContent === target;
-      if (isActive) {
-        panel.hidden = false;
-        requestAnimationFrame(() => panel.classList.add("is-active"));
-        return;
-      }
-
-      panel.classList.remove("is-active");
-      window.setTimeout(() => {
-        if (!panel.classList.contains("is-active")) {
-          panel.hidden = true;
-        }
-      }, 260);
-    });
+    drawer.innerHTML = `
+      <article class="about-object-card" data-about-card>
+        <button class="about-object-close" type="button" aria-label="关闭信息卡片">×</button>
+        <span>${content.label}</span>
+        <h3>${content.title}</h3>
+        <p>${content.summary}</p>
+        <ul>${content.items.map((item) => `<li>${item}</li>`).join("")}</ul>
+      </article>
+    `;
+    drawer.querySelector(".about-object-close")?.addEventListener("click", setDefaultState);
   }
 
+  setDefaultState();
   objects.forEach((object) => {
     object.addEventListener("click", () => activateObject(object.dataset.objectPanel));
   });
