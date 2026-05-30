@@ -64,7 +64,7 @@ document.querySelectorAll("[data-about-objects]").forEach((stage) => {
     });
 
     if (drawer) {
-      drawer.innerHTML = '<div class="about-object-prompt">点击左侧物件，查看我的背景、工具、项目和方法。</div>';
+      drawer.innerHTML = "";
     }
   }
 
