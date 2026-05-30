@@ -29,30 +29,109 @@ if (revealSections.length > 0) {
 document.querySelectorAll("[data-about-objects]").forEach((stage) => {
   const objects = Array.from(stage.querySelectorAll("[data-object-panel]"));
   const drawer = stage.querySelector(".about-object-drawer");
+  const toolIcons = {
+    codex: "./assets/tools/154c8b5922cdc1ad94c222cf57367b0a 1.png",
+    chatgpt: "./assets/tools/90e486ae7fa6e9ee96e0e8eabaee41e9 1.png",
+    gemini: "./assets/tools/932e93bde33cdf126670b926fc8cd106 1.png",
+    figma: "./assets/tools/a1af60fd177a5b86c7f301722d6a50b9 1.png",
+    godot: "./assets/tools/a1af60fd177a5b86c7f301722d6a50b9 2.png",
+    arduino: "./assets/tools/a1af60fd177a5b86c7f301722d6a50b9 3.png",
+    unity: "./assets/tools/a1af60fd177a5b86c7f301722d6a50b9 4.png",
+    photoshop: "./assets/tools/a1af60fd177a5b86c7f301722d6a50b9 6.png",
+    illustrator: "./assets/tools/a1af60fd177a5b86c7f301722d6a50b9 7.png",
+    midjourney: "./assets/tools/a1af60fd177a5b86c7f301722d6a50b9 8.png",
+    stableDiffusion: "./assets/tools/a1af60fd177a5b86c7f301722d6a50b9 9.png",
+    capcut: "./assets/tools/d30fc64de723927b52279619b72a7244 1.png",
+    keyshot: "./assets/tools/ed65e9e5236cf4c969d6b6f821f548b9 1.png",
+  };
+  const methodIcons = {
+    aiA: "./assets/method/1efaddc0-8180-4167-87c6-86faccea09cc 1.png",
+    aiB: "./assets/method/1efaddc0-8180-4167-87c6-86faccea09cc 2.png",
+    define: "./assets/method/b4d7e9dd-ae67-45f1-8f67-7741624182ee 1.png",
+    understand: "./assets/method/b4d7e9dd-ae67-45f1-8f67-7741624182ee 3.png",
+    test: "./assets/method/b4d7e9dd-ae67-45f1-8f67-7741624182ee 4.png",
+    present: "./assets/method/b4d7e9dd-ae67-45f1-8f67-7741624182ee 5.png",
+  };
+  const renderTool = (name, src) => `
+    <figure class="about-tool-icon">
+      <img src="${src}" alt="${name}" loading="lazy" decoding="async" />
+      <figcaption>${name}</figcaption>
+    </figure>
+  `;
+  const renderMethod = (number, title, src) => `
+    <article class="about-method-step">
+      <strong>${number}</strong>
+      <span>${title}</span>
+      <img src="${src}" alt="${title}" loading="lazy" decoding="async" />
+    </article>
+  `;
   const panels = {
     me: {
-      label: "About me",
-      title: "关于我",
-      summary: "艺术与科技专业学生，探索 AI 创意体验、智能视觉叙事与沉浸式交互。",
-      items: ["教育背景：广州美术学院", "专业方向：AI × 叙事 × 交互", "职业目标：AI 产品设计 / 创意工程"],
+      label: "ME",
+      variant: "about-card-me",
+      html: `
+        <h3>我</h3>
+        <div class="about-me-card-body">
+          <p>广州美术学院，艺术与科技在读。<br />主修课程覆盖：信息交互、体验设计、AI 工作坊、数据采集与视觉表达，关注如何将审美判断、内容生成和交互原型整合为可验证的体验方案。</p>
+          <img class="about-me-photo" src="./assets/me.jpg" alt="李颖个人照片" loading="lazy" decoding="async" />
+        </div>
+      `,
     },
     tools: {
-      label: "Tools",
-      title: "工具与技能",
-      summary: "用 AI 和原型工具把想法推进到可演示、可测试、可继续迭代的状态。",
-      items: ["Figma", "Vibe Coding", "Godot", "Unity", "Arduino"],
+      label: "TOOLS",
+      variant: "about-card-tools",
+      html: `
+        <h3>工具</h3>
+        <div class="about-tools-grid">
+          ${renderTool("ChatGPT", toolIcons.chatgpt)}
+          ${renderTool("Gemini", toolIcons.gemini)}
+          ${renderTool("Codex", toolIcons.codex)}
+          ${renderTool("Midjourney", toolIcons.midjourney)}
+          ${renderTool("Stable Diffusion", toolIcons.stableDiffusion)}
+          ${renderTool("Figma", toolIcons.figma)}
+          ${renderTool("Illustrator", toolIcons.illustrator)}
+          ${renderTool("Photoshop", toolIcons.photoshop)}
+          ${renderTool("CapCut", toolIcons.capcut)}
+          ${renderTool("KeyShot", toolIcons.keyshot)}
+          ${renderTool("Godot", toolIcons.godot)}
+          ${renderTool("Unity", toolIcons.unity)}
+          ${renderTool("Arduino", toolIcons.arduino)}
+        </div>
+      `,
     },
     projects: {
-      label: "Projects",
-      title: "项目经历",
-      summary: "项目围绕叙事型原型、空间化教学体验和跨领域交互装置展开。",
-      items: ["第零夜", "玉雕虚拟仿真", "AI 互动装置"],
+      label: "PROJECT",
+      variant: "about-card-project",
+      html: `
+        <h3>项目</h3>
+        <div class="about-project-card-body">
+          <ul>
+            <li>《第零夜》</li>
+            <li>交互装置</li>
+            <li>玉雕虚拟仿真实验室</li>
+            <li>视觉探索</li>
+          </ul>
+          <p>我参与过视觉小说游戏、交互装置、虚拟仿真实验室与视觉传播等多类项目，项目过程覆盖前期概念构思、视觉风格探索、交互流程设计、原型制作与最终展示整合。相比单一视觉产出，我<span>更关注</span>如何借助 AI、Unity/Godot、Figma 等工具，将想法结合 AI 工具<span>高效的</span>转化为可体验、可演示、可继续迭代的作品。</p>
+        </div>
+      `,
     },
     methods: {
-      label: "Methods",
-      title: "方法论",
-      summary: "把模糊灵感拆解成可查询、可筛选、可验证的创作路径。",
-      items: ["调研", "生成", "筛选", "原型验证"],
+      label: "METHOD",
+      variant: "about-card-method",
+      html: `
+        <div class="about-method-head">
+          <h3>方法</h3>
+          <p>从理解课题与场景出发，明确目标，提炼痛点，完成概念设计、原型验证与开发，并结合测试持续优化迭代。</p>
+        </div>
+        <div class="about-method-flow">
+          ${renderMethod("01", "理解问题", methodIcons.understand)}
+          ${renderMethod("02", "定义方向", methodIcons.define)}
+          ${renderMethod("03", "构建体验", methodIcons.aiA)}
+          ${renderMethod("04", "工具落地", methodIcons.aiB)}
+          ${renderMethod("05", "测试迭代", methodIcons.test)}
+          ${renderMethod("06", "展示表达", methodIcons.present)}
+        </div>
+      `,
     },
   };
 
@@ -82,12 +161,11 @@ document.querySelectorAll("[data-about-objects]").forEach((stage) => {
     });
 
     drawer.innerHTML = `
-      <article class="about-object-card" data-about-card>
+      <article class="about-object-card ${content.variant}" data-about-card>
+        <i class="about-card-line" aria-hidden="true"></i>
         <button class="about-object-close" type="button" aria-label="关闭信息卡片">×</button>
-        <span>${content.label}</span>
-        <h3>${content.title}</h3>
-        <p>${content.summary}</p>
-        <ul>${content.items.map((item) => `<li>${item}</li>`).join("")}</ul>
+        <span class="about-card-label">${content.label}</span>
+        ${content.html}
       </article>
     `;
     drawer.querySelector(".about-object-close")?.addEventListener("click", setDefaultState);
