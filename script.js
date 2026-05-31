@@ -240,6 +240,10 @@ document.querySelectorAll("[data-zero-marquee] .zero-marquee-row").forEach((row)
     clone.setAttribute("aria-hidden", "true");
     track.appendChild(clone);
   }
+
+  row.querySelectorAll("img").forEach((image) => {
+    image.loading = "eager";
+  });
 });
 
 const canvas = document.querySelector("#opening-canvas");

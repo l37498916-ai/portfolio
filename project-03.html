@@ -3,66 +3,175 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>玉雕工艺虚拟仿真交互系统</title>
+    <title>JadeLab 玉雕实验室虚拟实训系统</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="detail-page">
+  <body class="detail-page jadelab-page">
     <canvas class="ambient-canvas" aria-hidden="true"></canvas>
     <main>
-      <section class="detail-hero">
-        <div>
+      <section class="detail-hero jadelab-hero detail-reveal is-visible">
+        <div class="jadelab-hero-copy">
           <a class="back-link" href="./index.html#projects">返回作品列表</a>
-          <p class="eyebrow">03 · Unity Experience</p>
-          <h1>玉雕工艺虚拟仿真交互系统</h1>
+          <p class="eyebrow">03 / Education Simulation MVP</p>
+          <h1>JadeLab</h1>
           <p class="lead">
-            基于 Unity 的空间化教学体验设计，帮助学生快速理解玉雕工艺流程，
-            并通过界面与空间场景建立清晰的学习路径。
+            面向高校玉雕实验室的虚拟实训系统，让学生在进入真实实验室前完成安全学习、工具认知、选料判断、工艺预演与结果反馈。
           </p>
+          <div class="jadelab-tags" aria-label="项目关键词">
+            <span>教育类虚拟仿真</span>
+            <span>MVP 原型</span>
+            <span>Figma UI</span>
+            <span>Unity 落地</span>
+          </div>
         </div>
-        <div class="detail-cover asset-frame">
-          <img loading="lazy" decoding="async" src="./assets/project-03-cover.jpg" alt="玉雕工艺虚拟仿真交互系统封面" />
+        <figure class="detail-cover asset-frame jadelab-hero-media">
+          <img loading="eager" decoding="async" src="./assets/jadelab-scene-workshop.jpg" alt="JadeLab Unity 玉雕实验室场景" />
+        </figure>
+      </section>
+
+      <section class="detail-section jadelab-section detail-reveal" aria-labelledby="jadelab-overview">
+        <div class="jadelab-section-head">
+          <p class="eyebrow">Product Overview</p>
+          <h2 id="jadelab-overview">产品概览</h2>
+          <p>JadeLab 目前处于 MVP 原型推进阶段，目标是把真实实验室中的高风险、高损耗、强经验知识，转译为可预演、可理解、可反馈的数字学习流程。</p>
+        </div>
+        <div class="jadelab-overview-grid">
+          <article>
+            <span>服务对象</span>
+            <strong>学生 / 教师 / 实验室</strong>
+            <p>学生提前熟悉流程，教师减少重复讲解，实验室降低误操作和材料损耗风险。</p>
+          </article>
+          <article>
+            <span>我的职责</span>
+            <strong>Figma 到 Unity 的体验落地</strong>
+            <p>参与界面设计、流程拆解、Unity UI 实现、场景协作和部分交互演示。</p>
+          </article>
+          <article>
+            <span>当前输出</span>
+            <strong>高保真 UI + Unity 场景</strong>
+            <p>已形成核心学习流程、关键页面、空间场景还原和可演示的 MVP 片段。</p>
+          </article>
         </div>
       </section>
 
-      <section class="detail-section">
-        <div class="section-heading">
-          <p class="eyebrow">Demo video</p>
-          <h2>视频演示</h2>
+      <section class="detail-section jadelab-section detail-reveal" aria-labelledby="jadelab-why">
+        <div class="jadelab-split">
+          <div class="jadelab-section-head">
+            <p class="eyebrow">Why It Matters</p>
+            <h2 id="jadelab-why">为什么需要这个产品</h2>
+            <p>玉雕教学不是单纯看步骤，而是材料、工具、工序、安全和经验判断共同作用的复杂场景。JadeLab 的价值在于把这些知识提前结构化。</p>
+          </div>
+          <div class="jadelab-research-strip" aria-label="真实实验室调研素材">
+            <img loading="lazy" decoding="async" src="./assets/jadelab-research-01.jpg" alt="玉雕实验室调研照片 01" />
+            <img loading="lazy" decoding="async" src="./assets/jadelab-research-02.jpg" alt="玉雕实验室调研照片 02" />
+            <img loading="lazy" decoding="async" src="./assets/jadelab-research-03.jpg" alt="玉雕实验室调研照片 03" />
+          </div>
         </div>
-        <div class="video-shell">
-          <video preload="metadata" class="project-video" controls playsinline poster="./assets/project-03-cover.jpg">
-            <source src="./assets/project-03-demo-web.mp4" type="video/mp4" />
-          </video>
+        <div class="jadelab-problem-grid">
+          <article>
+            <span>01</span>
+            <h3>真实材料试错成本高</h3>
+            <p>玉料操作不可逆，初学者很难在低风险环境中反复练习判断。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>工具和工序复杂</h3>
+            <p>工具用途、加工顺序和操作状态容易混淆，需要更清晰的学习路径。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>安全与经验知识难传达</h3>
+            <p>口头讲解难以覆盖真实操作细节，错误往往到后期才暴露。</p>
+          </article>
         </div>
       </section>
 
-      <section class="detail-section">
-        <div class="detail-grid">
-          <article>
-            <h3>项目定位</h3>
-            <p>基于 Unity 的空间化教学体验设计，通过虚拟仿真场景、界面引导与交互反馈，帮助学生理解玉雕工艺流程。</p>
-          </article>
-          <article>
-            <h3>我的职责</h3>
-            <p>Unity UI 落地、Figma界面转Unity、部分交互动效与界面实现。</p>
-          </article>
-          <article>
-            <h3>设计流程</h3>
-            <p>从教学流程拆解出发，经过 Figma 界面协作、Unity UI 落地、交互动效实现与运行测试，逐步完善空间化学习体验。</p>
-          </article>
+      <section class="detail-section jadelab-section detail-reveal" aria-labelledby="jadelab-loop">
+        <div class="jadelab-section-head">
+          <p class="eyebrow">Learning Loop</p>
+          <h2 id="jadelab-loop">核心学习闭环</h2>
+        </div>
+        <div class="jadelab-flow" aria-label="JadeLab 核心学习闭环">
+          <span>进入系统</span>
+          <span>安全学习</span>
+          <span>工具认知</span>
+          <span>选料判断</span>
+          <span>图案设计</span>
+          <span>虚拟雕刻</span>
+          <span>抛光收尾</span>
+          <span>成果反馈</span>
         </div>
       </section>
 
-      <section class="detail-section">
-        <div class="section-heading">
-          <p class="eyebrow">Process</p>
-          <h2>过程素材</h2>
-          <p>可放置 Unity 场景、UI界面、动效截图和运行视频帧。</p>
+      <section class="detail-section jadelab-section detail-reveal" aria-labelledby="jadelab-features">
+        <div class="jadelab-section-head">
+          <p class="eyebrow">Feature System</p>
+          <h2 id="jadelab-features">关键功能设计</h2>
+          <p>功能不按“页面”罗列，而是按学习任务组织，帮助学生从认知、判断到模拟操作逐步进入真实实验室语境。</p>
         </div>
-        <div class="detail-gallery">
-          <figure class="asset-frame"><img loading="lazy" decoding="async" src="./assets/project-03-01.jpg" alt="玉雕过程图 01" /></figure>
-          <figure class="asset-frame"><img loading="lazy" decoding="async" src="./assets/project-03-02.jpg" alt="玉雕过程图 02" /></figure>
-          <figure class="asset-frame"><img loading="lazy" decoding="async" src="./assets/project-03-03.jpg" alt="玉雕过程图 03" /></figure>
+        <div class="jadelab-feature-grid">
+          <article><span>Safety</span><h3>安全知识模块</h3><p>进入实训前完成安全规范、设备风险和操作边界学习。</p></article>
+          <article><span>Material</span><h3>玉料认知模块</h3><p>通过选料界面理解材料状态、纹理判断和加工限制。</p></article>
+          <article><span>Tools</span><h3>工具认知模块</h3><p>将工具用途和操作阶段对应起来，降低初学者混淆成本。</p></article>
+          <article><span>Process</span><h3>工艺流程模块</h3><p>围绕设计、粗雕、细雕、抛光、展示建立连续学习路径。</p></article>
+          <article><span>Operation</span><h3>虚拟操作模块</h3><p>通过 Unity 场景和交互演示预演关键操作，减少真实试错。</p></article>
+          <article><span>Feedback</span><h3>结果评估模块</h3><p>把成果展示与反馈作为闭环终点，为后续迭代保留空间。</p></article>
+        </div>
+      </section>
+
+      <section class="detail-section jadelab-section detail-reveal" aria-labelledby="jadelab-build">
+        <div class="jadelab-section-head">
+          <p class="eyebrow">Prototype To Unity</p>
+          <h2 id="jadelab-build">从原型到落地</h2>
+          <p>页面重点展示从真实场景理解、Figma 高保真界面到 Unity 场景与交互演示的推进过程。</p>
+        </div>
+        <div class="jadelab-build-grid">
+          <figure>
+            <img loading="lazy" decoding="async" src="./assets/jadelab-ui-material.jpg" alt="JadeLab 选料判断界面" />
+            <figcaption><span>01</span> 选料判断界面</figcaption>
+          </figure>
+          <figure>
+            <img loading="lazy" decoding="async" src="./assets/jadelab-ui-design.jpg" alt="JadeLab 图案设计界面" />
+            <figcaption><span>02</span> 图案设计界面</figcaption>
+          </figure>
+          <figure>
+            <img loading="lazy" decoding="async" src="./assets/jadelab-ui-rough.jpg" alt="JadeLab 粗雕流程界面" />
+            <figcaption><span>03</span> 粗雕流程界面</figcaption>
+          </figure>
+          <figure>
+            <img loading="lazy" decoding="async" src="./assets/jadelab-ui-polish.jpg" alt="JadeLab 抛光收尾界面" />
+            <figcaption><span>04</span> 抛光收尾界面</figcaption>
+          </figure>
+        </div>
+        <div class="jadelab-demo-row">
+          <figure class="asset-frame">
+            <img loading="lazy" decoding="async" src="./assets/jadelab-scene-01.jpg" alt="JadeLab Unity 场景推进截图" />
+          </figure>
+          <div class="video-shell">
+            <video preload="metadata" class="project-video" controls playsinline poster="./assets/jadelab-scene-workshop.jpg">
+              <source src="./assets/project-03-demo-web.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section jadelab-section detail-reveal" aria-labelledby="jadelab-next">
+        <div class="jadelab-status">
+          <div class="jadelab-section-head">
+            <p class="eyebrow">MVP Status</p>
+            <h2 id="jadelab-next">当前状态与下一步</h2>
+            <p>这是一个仍在推进中的教育类虚拟仿真产品原型，目前不以“已上线产品”呈现，而强调清晰的设计链路和落地协作能力。</p>
+          </div>
+          <div class="jadelab-status-grid">
+            <article>
+              <h3>已完成</h3>
+              <p>真实实验室调研、核心学习流程、低保真方向、高保真 UI、Unity 场景还原和部分交互演示。</p>
+            </article>
+            <article>
+              <h3>下一步</h3>
+              <p>完善安全考核、工具反馈、雕刻交互、学习评估，以及教师端查看和反馈机制。</p>
+            </article>
+          </div>
         </div>
       </section>
     </main>
