@@ -1199,6 +1199,14 @@ p {
   font-size: clamp(28px, 3vw, 42px);
 }
 
+.project-proof {
+  margin-top: 14px;
+  color: #51647f;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
 .meta-list {
   display: flex;
   flex-wrap: wrap;
@@ -1440,6 +1448,11 @@ p {
   border-radius: 8px;
   background: #fff;
   padding: 24px;
+}
+
+.detail-grid article p {
+  color: var(--text);
+  line-height: 1.68;
 }
 
 .detail-grid h3,
@@ -2851,6 +2864,40 @@ p {
   font-size: 14px;
   font-weight: 850;
   padding: 9px 12px;
+}
+
+.zero-contribution-summary {
+  margin-top: 34px;
+  border: 1px solid rgba(53, 119, 232, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 18px 54px rgba(18, 21, 28, 0.06);
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.zero-contribution-summary h3 {
+  color: var(--ink);
+  font-size: clamp(24px, 2.8vw, 36px);
+}
+
+.zero-contribution-summary ul {
+  display: grid;
+  gap: 14px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.zero-contribution-summary li {
+  color: #53657d;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.62;
+}
+
+.zero-contribution-summary strong {
+  color: var(--ink);
+  font-weight: 900;
 }
 
 .zero-assets {
