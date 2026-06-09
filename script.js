@@ -111,7 +111,7 @@ document.querySelectorAll("[data-about-objects]").forEach((stage) => {
             <li>玉雕虚拟仿真实验室</li>
             <li>视觉探索</li>
           </ul>
-          <p>我参与过视觉小说游戏、交互装置、虚拟仿真实验室与视觉传播等多类项目，项目过程覆盖前期概念构思、视觉风格探索、交互流程设计、原型制作与最终展示整合。相比单一视觉产出，我<span>更关注</span>如何借助 AI、Unity/Godot、Figma 等工具，将想法结合 AI 工具<span>高效的</span>转化为可体验、可演示、可继续迭代的作品。</p>
+          <p>我参与过视觉小说游戏、交互装置、虚拟仿真实验室与视觉传播等多类项目，项目过程覆盖前期概念构思、视觉风格探索、交互流程设计、原型制作与最终展示整合。相比单一视觉产出，我<span>更关注</span>如何借助 <span class="keep-together">AI、Unity/Godot</span>、Figma 等工具，将想法结合 AI 工具<span>高效的</span>转化为可体验、可演示、可继续迭代的作品。</p>
         </div>
       `,
     },
